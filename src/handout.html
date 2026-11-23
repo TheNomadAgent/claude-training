@@ -195,7 +195,7 @@ td:first-child{font-weight:650}
 .opt .box{width:22px;height:22px;border-radius:50%;border:2px solid var(--line2);margin-top:1px;display:grid;place-items:center;font:700 13px/1 var(--mono)}
 .q.multi .opt .box{border-radius:6px}
 .opt.sel .box{border-color:var(--sun);background:var(--sun);color:var(--ink)}
-.opt[disabled]{cursor:default;opacity:1;color:var(--text)}
+.opt[disabled],div.opt{cursor:default;opacity:1;color:var(--text)}
 .opt .why{grid-column:2;color:#C4D1E8;font-size:15.5px;margin-top:6px;display:none}
 .opt .tag{display:inline-block;font:700 12px/1 var(--body);padding:4px 7px;border-radius:6px;margin-right:6px;vertical-align:1px}
 .q.done .opt .why{display:block}
@@ -221,6 +221,39 @@ td:first-child{font-weight:650}
 .gl div{padding:14px 16px;border-radius:12px;background:var(--ink2);border:1px solid var(--line)}
 .gl dt{font:650 18px/1.2 var(--disp);margin-bottom:4px}
 .gl dd{margin:0;color:#CBD7EC}
+.ex-top{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin:0 0 14px}
+.ex-top .crumb{margin:0}
+.timer{font:600 15px/1 var(--mono);padding:9px 12px;border-radius:10px;border:1px solid var(--line2);background:var(--ink2)}
+.timer.low{border-color:var(--bad);color:var(--bad)}
+.strip{display:flex;flex-wrap:wrap;gap:7px;margin:0 0 22px;padding:0;list-style:none}
+.strip button{position:relative;width:36px;height:36px;border-radius:50%;border:1.5px solid var(--line2);background:var(--ink);cursor:pointer;font:600 13px/1 var(--mono);color:var(--mute);padding:0}
+.strip button.ans{background:var(--ink3);color:var(--text);border-color:var(--volt)}
+.strip button.cur{border-color:var(--sun);color:var(--ink);background:var(--sun)}
+.strip button.flag::after{content:"";position:absolute;right:-2px;top:-2px;width:11px;height:11px;border-radius:50%;background:var(--ember);border:2px solid var(--ink)}
+.exq h2{font:600 clamp(19px,2.4vw,23px)/1.42 var(--body);margin:0 0 18px}
+.exq .qn,.wrap>.q .qn{font:600 13.5px/1 var(--mono);color:var(--sun);margin-bottom:12px}
+.opt .box.let{border-radius:50%;font-size:12.5px;color:var(--mute)}
+.opt.sel .box.let,.q.done .opt.right .box.let,.q.done .opt.wrong .box.let{color:var(--ink)}
+.exnav{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px;align-items:center}
+.exnav .sp{flex:1}
+.btn.on{border-color:var(--ember);color:var(--ember)}
+.btn[disabled]{opacity:.4;cursor:default}
+.warn{margin-top:14px;padding:14px 16px;border-radius:12px;border:1px solid var(--sun);background:rgba(255,197,90,.08);display:flex;gap:12px;align-items:center;justify-content:space-between;flex-wrap:wrap}
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin:0 0 24px}
+.facts div{padding:14px 16px;border-radius:12px;background:var(--ink2);border:1px solid var(--line);color:var(--mute);font-size:15px}
+.facts b{display:block;font:650 24px/1.1 var(--disp);color:var(--text);margin-bottom:4px}
+.big{font:750 clamp(54px,11vw,96px)/1 var(--disp);letter-spacing:-.04em;margin:0}
+.big small{font:500 .28em/1 var(--body);color:var(--mute);letter-spacing:0;margin-left:.5em}
+.bars{display:grid;gap:12px;margin:18px 0 8px}
+.bars .row{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:4px 14px;align-items:baseline}
+.bars .row span{font-size:15.5px}
+.bars .row b{font:600 14px/1 var(--mono)}
+.bars .track{grid-column:1/-1;height:8px;border-radius:8px;background:var(--ink3);overflow:hidden}
+.bars .fill{height:100%;border-radius:8px;background:var(--routeh)}
+.rev{list-style:none;padding:0;margin:12px 0 0;display:grid;gap:8px}
+.rev li{padding:12px 14px;border-radius:12px;background:var(--ink2);border:1px solid var(--line)}
+.rev a{font-weight:650}
+.h2{font:650 clamp(22px,3vw,27px)/1.15 var(--disp);letter-spacing:-.02em;margin:38px 0 6px}
 .toast{position:fixed;left:50%;bottom:calc(22px + env(safe-area-inset-bottom));transform:translateX(-50%);background:#17305A;border:1px solid var(--line2);
   padding:10px 16px;border-radius:999px;font-weight:600;font-size:14.5px;z-index:80;box-shadow:0 10px 30px rgba(0,0,0,.5)}
 .toast[hidden]{display:none}
@@ -243,6 +276,9 @@ td:first-child{font-weight:650}
   .q{padding:16px 14px}
   figure pre{font-size:13px;padding:14px}
   .pop{position:fixed;left:12px!important;right:12px;top:auto!important;bottom:calc(12px + env(safe-area-inset-bottom));width:auto;padding:18px 18px 20px;border-radius:18px}
+  .strip{flex-wrap:nowrap;overflow-x:auto;margin:0 -18px 18px;padding:4px 18px 8px;scrollbar-width:none}
+  .strip::-webkit-scrollbar{display:none}
+  .strip li{flex:none}
   .pn{grid-template-columns:1fr}
   .pn a.nx{text-align:left}
 }
@@ -280,7 +316,7 @@ td:first-child{font-weight:650}
 var D=JSON.parse(document.getElementById('data').textContent);
 /* Answers live in memory only: nothing is stored or sent, and every visit starts clean. */
 try{localStorage.removeItem('ct.v1')}catch(e){}
-var S={quiz:{}};
+var S={quiz:{},exam:{}};
 function save(){}
 var $=function(s,r){return (r||document).querySelector(s)},$$=function(s,r){return [].slice.call((r||document).querySelectorAll(s))};
 function esc(t){return String(t).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
@@ -307,6 +343,12 @@ function routeHTML(cur,filter){
       '<span class="n">'+pad(s.id)+'</span><span>'+esc(s.title)+(has(s.id)?'':' <span class="sr">(coming soon)</span>')+'</span>'+
       (r&&r.answered===r.total?'<span class="sc">'+r.right+'/'+r.total+'</span>':'')+'</a></li>';
   });
+  Object.keys(D.exams).forEach(function(k,n){var x=D.exams[k];
+    if(f&&x.title.toLowerCase().indexOf(f)<0)return;
+    if(!n)h+='<li class="dom">Practice exams</li>';
+    var st=S.exam[k],cls=[];if(st&&st.done)cls.push('done');if(cur==='x'+k)cls.push('cur');
+    h+='<li><a class="'+cls.join(' ')+'" href="#/exam/'+k+'"><span class="n">P'+k+'</span><span>'+esc(x.title)+', '+x.q.length+' questions</span>'+
+      (st&&st.done?'<span class="sc">'+examScore(k)+'/'+x.q.length+'</span>':'')+'</a></li>'});
   return h+'</ol>';
 }
 function drawRail(cur){$('#rail').innerHTML=routeHTML(cur)+'<a class="xl" href="#/glossary">Glossary</a>'}
@@ -323,7 +365,7 @@ function home(){
     '<p>A study guide for the Claude Certified Associate, Foundations exam. Read a section, sit its five questions, see why each answer is right or wrong.</p>'+
     '<div class="cta">'+cta+'<button class="btn" id="inst" hidden>Install on this device</button></div></div>'+
     '<img class="mark" src="assets/logo-transparent-1024.png" alt="" width="170" height="170"></section>'+
-    '<div class="stat"><div><b>'+o.avail+'</b>of '+D.sections.length+' sessions published</div><div><b>'+o.done+'</b>quizzes finished this visit</div><div><b>'+Object.keys(D.glossary).length+'</b>glossary terms</div></div>'+
+    '<div class="stat"><div><b>'+o.avail+'</b>of '+D.sections.length+' sessions published</div><div><b>'+o.done+'</b>quizzes finished this visit</div><div><b>'+Object.keys(D.exams).length+'</b>practice exam'+(Object.keys(D.exams).length===1?'':'s')+'</div><div><b>'+Object.keys(D.glossary).length+'</b>glossary terms</div></div>'+
     '<div class="find"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>'+
     '<label class="sr" for="find">Find a session or term</label><input id="find" type="search" placeholder="Find a session or a term" autocomplete="off"></div>'+
     '<ul class="hits" id="hits"></ul><div id="list">'+routeHTML(null)+'</div>'+
@@ -394,6 +436,87 @@ function drawQuiz(id){
   }else sc.innerHTML='';
   save(S);
 }
+
+/* ---------- practice exam ---------- */
+var LET=['A','B','C','D','E'],tick=null;
+function stopTimer(){if(tick){clearInterval(tick);tick=null}}
+function examScore(k){var x=D.exams[k],st=S.exam[k],n=0;if(!st)return 0;x.q.forEach(function(q,i){if(st.ans[i]===q.a)n++});return n}
+function fmt(ms){var s=Math.max(0,Math.ceil(ms/1000)),m=Math.floor(s/60);return (m<10?'0':'')+m+':'+(s%60<10?'0':'')+(s%60)}
+function exam(k){
+  var x=D.exams[k],st=S.exam[k];drawRail('x'+k);document.title=x.title+' | Claude Foundations';
+  if(!st)return examIntro(k);if(st.done)return examResult(k);examQ(k);
+}
+function examIntro(k){
+  var x=D.exams[k];
+  $('#view').innerHTML='<div class="wrap"><p class="crumb">Practice exam</p><h1 class="t">'+esc(x.title)+'</h1>'+
+    '<p class="lead">'+x.q.length+' multiple-choice questions, one correct answer each. You see the answers and the reasons only after you finish, like the real thing.</p>'+
+    '<div class="facts"><div><b>'+x.q.length+'</b>questions</div><div><b>'+x.min+' min</b>if you use the timer</div><div><b>'+x.target+' of '+x.q.length+'</b>a good score to aim for</div></div>'+
+    '<div class="cta"><button class="btn pri" id="go1">Start</button><button class="btn" id="go2">Start with a '+x.min+'-minute timer</button></div>'+
+    '<div class="tip">You can jump between questions, change answers and flag any you want to come back to. Nothing is saved or sent. If you reload the page, the exam starts again. '+
+    'The target is a study guide only. The real exam uses its own scaled scoring.</div></div>';
+  function start(timed){S.exam[k]={ans:{},flag:{},cur:0,done:false,end:timed?Date.now()+x.min*6e4:0};exam(k);window.scrollTo(0,0)}
+  $('#go1').onclick=function(){start(false)};$('#go2').onclick=function(){start(true)};
+}
+function examQ(k){
+  var x=D.exams[k],st=S.exam[k],i=st.cur,q=x.q[i],n=x.q.length,left=n-Object.keys(st.ans).length;
+  var h='<div class="wrap exq"><div class="ex-top"><p class="crumb">'+esc(x.title)+'</p>'+(st.end?'<span class="timer" id="tm"></span>':'')+'</div><ol class="strip">';
+  x.q.forEach(function(_,j){var c=[];if(st.ans[j]!==undefined)c.push('ans');if(st.flag[j])c.push('flag');if(j===i)c.push('cur');
+    h+='<li><button class="'+c.join(' ')+'" data-j="'+j+'" aria-label="Question '+(j+1)+(st.ans[j]!==undefined?', answered':'')+(st.flag[j]?', flagged':'')+'"'+(j===i?' aria-current="true"':'')+'>'+(j+1)+'</button></li>'});
+  h+='</ol><div class="qn">Question '+(i+1)+' of '+n+'</div><h2 id="exh">'+esc(q.q)+'</h2><div role="radiogroup" aria-labelledby="exh">';
+  q.o.forEach(function(o,j){var sel=st.ans[i]===j;
+    h+='<button class="opt'+(sel?' sel':'')+'" role="radio" aria-checked="'+sel+'" data-o="'+j+'"><span class="box let" aria-hidden="true">'+LET[j]+'</span><span>'+esc(o.t)+'</span></button>'});
+  h+='</div><div class="exnav"><button class="btn" id="pv"'+(i?'':' disabled')+'>Previous</button><button class="btn'+(st.flag[i]?' on':'')+'" id="fl" aria-pressed="'+!!st.flag[i]+'">'+(st.flag[i]?'Flagged':'Flag for review')+'</button>'+
+    '<span class="sp"></span>'+(i<n-1?'<button class="btn pri" id="nx">Next</button>':'')+'<button class="btn" id="fin">Finish exam</button></div><div id="warn"></div></div>';
+  $('#view').innerHTML=h;
+  var cb=$('.strip .cur'),sp=$('.strip');if(cb&&sp.scrollWidth>sp.clientWidth)sp.scrollLeft=cb.parentNode.offsetLeft-sp.clientWidth/2+18;
+  function to(j,top){st.cur=j;var y=window.scrollY;examQ(k);window.scrollTo(0,top?0:y)}
+  $$('.strip button').forEach(function(b){b.onclick=function(){to(+b.dataset.j)}});
+  $$('.opt[data-o]').forEach(function(b){b.onclick=function(){st.ans[i]=+b.dataset.o;to(i)}});
+  $('#pv').onclick=function(){if(i)to(i-1,true)};if($('#nx'))$('#nx').onclick=function(){to(i+1,true)};
+  $('#fl').onclick=function(){st.flag[i]=!st.flag[i];to(i)};
+  $('#fin').onclick=function(){
+    var fl=Object.keys(st.flag).filter(function(j){return st.flag[j]}).length;
+    if(!left&&!fl){finish(k);return}
+    $('#warn').innerHTML='<div class="warn"><span>'+(left?left+' unanswered':'')+(left&&fl?' and ':'')+(fl?fl+' flagged':'')+'. Unanswered questions score zero.</span><button class="btn pri" id="fin2">Finish anyway</button></div>';
+    $('#fin2').onclick=function(){finish(k)};$('#fin2').focus();
+  };
+  if(st.end){var tm=$('#tm'),upd=function(){var ms=st.end-Date.now();if(ms<=0){finish(k);return}tm.textContent=fmt(ms)+' left';tm.classList.toggle('low',ms<3e5)};upd();stopTimer();tick=setInterval(upd,1000)}
+}
+function finish(k){stopTimer();S.exam[k].done=true;S.exam[k].only=false;exam(k);window.scrollTo(0,0);drawProg()}
+function examResult(k){
+  var x=D.exams[k],st=S.exam[k],n=x.q.length,sc=examScore(k),dom={},ses={};
+  x.q.forEach(function(q,i){var d=D.sections[q.s-1].d,ok=st.ans[i]===q.a;dom[d]=dom[d]||[0,0];dom[d][1]++;if(ok)dom[d][0]++;else{ses[q.s]=(ses[q.s]||0)+1}});
+  var pct=Math.round(100*sc/n),msg=sc>=x.target?'At or above the target. Read the reasons for anything you missed.':'Below the target of '+x.target+'. The list below shows where to spend your time.';
+  var h='<div class="wrap"><p class="crumb">'+esc(x.title)+', result</p><p class="big">'+sc+'<small>of '+n+' ('+pct+'%)</small></p><p class="lead" style="margin-top:14px">'+msg+'</p>'+
+    '<h2 class="h2">By exam domain</h2><div class="bars">';
+  Object.keys(dom).sort(function(a,b){return a-b}).forEach(function(d){var v=dom[d];
+    h+='<div class="row"><span>'+esc(D.domains[d].name)+'</span><b>'+v[0]+'/'+v[1]+'</b><div class="track"><div class="fill" style="width:'+(100*v[0]/v[1])+'%"></div></div></div>'});
+  h+='</div>';
+  var miss=Object.keys(ses).sort(function(a,b){return ses[b]-ses[a]||a-b});
+  if(miss.length){h+='<h2 class="h2">Sessions to revisit</h2><ul class="rev">';
+    miss.forEach(function(s){var sec=D.sections[s-1],t=pad(+s)+' '+esc(sec.title);
+      h+='<li>'+(has(+s)?'<a href="#/s/'+s+'">'+t+'</a>':t+' <span style="color:var(--dim)">(not published yet)</span>')+'<span style="color:var(--mute)">, '+ses[s]+' missed</span></li>'});
+    h+='</ul>'}
+  h+='<h2 class="h2">Every question, with reasons</h2><div class="cta" style="margin:10px 0 18px"><button class="btn'+(st.only?' on':'')+'" id="only" aria-pressed="'+!!st.only+'">'+(st.only?'Showing missed only':'Show only the ones I missed')+'</button><button class="btn" id="redo">Start this exam again</button></div>';
+  x.q.forEach(function(q,i){var a=st.ans[i],ok=a===q.a;if(st.only&&ok)return;
+    h+='<div class="q done"><div class="qn">Question '+(i+1)+(a===undefined?', not answered':'')+'</div><h3>'+esc(q.q)+'</h3>';
+    q.o.forEach(function(o,j){var cls='opt',tag='';
+      if(j===q.a){cls+=' right'+(a===j?'':' missed');tag='<span class="tag">'+(a===j?'Correct':'Correct answer')+'</span>'}else if(a===j){cls+=' wrong';tag='<span class="tag">Your answer</span>'}
+      h+='<div class="'+cls+'"><span class="box let" aria-hidden="true">'+LET[j]+'</span><span>'+esc(o.t)+'</span><span class="why">'+tag+esc(o.why)+'</span></div>'});
+    h+='</div>'});
+  if(st.only&&sc===n)h+='<p class="lead">Nothing missed.</p>';
+  $('#view').innerHTML=h+'</div>';
+  $('#only').onclick=function(){st.only=!st.only;var y=window.scrollY;examResult(k);window.scrollTo(0,y)};
+  $('#redo').onclick=function(){delete S.exam[k];exam(k);window.scrollTo(0,0)};
+  drawRail('x'+k);
+}
+document.addEventListener('keydown',function(e){
+  var m=location.hash.match(/^#\/exam\/(\d+)/);if(!m||e.metaKey||e.ctrlKey||e.altKey)return;var st=S.exam[m[1]];if(!st||st.done)return;
+  var x=D.exams[m[1]],k=e.key.toUpperCase(),j=LET.indexOf(k);if(j<0&&/^[1-5]$/.test(k))j=+k-1;
+  if(j>=0&&j<x.q[st.cur].o.length){st.ans[st.cur]=j;examQ(m[1])}
+  else if(e.key==='ArrowRight'&&st.cur<x.q.length-1){st.cur++;examQ(m[1])}
+  else if(e.key==='ArrowLeft'&&st.cur>0){st.cur--;examQ(m[1])}
+});
 function glossary(){
   var keys=Object.keys(D.glossary).sort(function(a,b){return D.glossary[a][0].localeCompare(D.glossary[b][0])});
   $('#view').innerHTML='<div class="wrap"><p class="crumb">Reference</p><h1 class="t">Glossary</h1><p class="lead">Every underlined term in the sessions, in one place.</p><dl class="gl">'+
@@ -404,7 +527,8 @@ function go(){
   closePop();document.body.classList.remove('open');$('#menuBtn').setAttribute('aria-expanded','false');$('#scrim').hidden=true;
   var m=location.hash.match(/^#\/s\/(\d+)/);
   if(location.hash==='#quiz'){var q=$('#quiz');if(q){q.scrollIntoView();return}}
-  if(m)section(+m[1]);else if(location.hash==='#/glossary')glossary();else home();
+  var x=location.hash.match(/^#\/exam\/(\d+)/);stopTimer();
+  if(m)section(+m[1]);else if(x&&D.exams[x[1]])exam(x[1]);else if(location.hash==='#/glossary')glossary();else home();
   drawProg();window.scrollTo(0,0);
 }
 var lastRoute='';
@@ -459,7 +583,7 @@ if('serviceWorker' in navigator&&(location.protocol==='https:'||location.hostnam
 }
 /* start clean when a page comes back from the browser's back-forward cache, or after 30 minutes in the background */
 var hiddenAt=0;
-function fresh(){S={quiz:{}};go()}
+function fresh(){stopTimer();S={quiz:{},exam:{}};go()}
 window.addEventListener('pageshow',function(e){if(e.persisted)fresh()});
 document.addEventListener('visibilitychange',function(){if(document.hidden)hiddenAt=Date.now();else if(hiddenAt&&Date.now()-hiddenAt>18e5)fresh()});
 lastRoute=location.hash;go();

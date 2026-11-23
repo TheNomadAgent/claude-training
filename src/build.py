@@ -153,6 +153,14 @@ def main():
         "glossary": {k: list(v) for k, v in GLOSSARY.items()},
         "content": {},
     }
+    data["exams"] = {}
+    for n in range(1, 10):
+        try:
+            ex = importlib.import_module("content.exam%d" % n).EXAM
+        except ModuleNotFoundError:
+            continue
+        data["exams"][n] = {"title": ex["title"], "min": ex["minutes"], "target": ex["target"],
+                            "q": [{"s": s, "q": q, "a": "ABCD".index(a), "o": [{"t": o, "why": w} for o, w in opts]} for s, q, a, opts in ex["questions"]]}
     deck_tpl = open(os.path.join(HERE, "deck.html"), encoding="utf-8").read()
     fonts = {"F_DISP": b64("assets/fonts/bricolage.woff2"), "F_BODY": b64("assets/fonts/figtree.woff2"), "F_MONO": b64("assets/fonts/jetbrains.woff2")}
     logo_small, logo_big, icon32 = b64("assets/logo-transparent-64.png"), b64("assets/logo-transparent-256.png"), b64("assets/icon-32.png")
