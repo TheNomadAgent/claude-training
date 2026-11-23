@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Claude Foundations training</title>
+<meta name="description" content="A 32-session study guide and practice questions for the Claude Certified Associate, Foundations exam.">
+<meta name="theme-color" content="#0A162B">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="assets/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/icon-32.png">
+<link rel="apple-touch-icon" href="assets/icon-180.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Foundations">
+<meta property="og:title" content="Claude Foundations training">
+<meta property="og:description" content="32 short sessions with practice questions for the CCAO-F exam.">
+<meta property="og:image" content="%%BASE%%assets/icon-512.png">
+<link rel="preload" href="assets/fonts/figtree.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/bricolage.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+@font-face{font-family:"Bricolage";src:url(assets/fonts/bricolage.woff2) format("woff2");font-weight:200 800;font-display:swap}
+@font-face{font-family:"Figtree";src:url(assets/fonts/figtree.woff2) format("woff2");font-weight:300 900;font-display:swap}
+@font-face{font-family:"JBMono";src:url(assets/fonts/jetbrains.woff2) format("woff2");font-weight:100 800;font-display:swap}
+:root{
+  --ink:#0A162B;--ink2:#0E1D38;--ink3:#15284A;--line:#223A63;--line2:#2E4A7C;
+  --text:#E9EFF9;--mute:#9AACCB;--dim:#6F84A8;
+  --ember:#FF6A3D;--sun:#FFC55A;--volt:#4466FF;--sky:#9FD4FB;
+  --ok:#57D39B;--bad:#FF8177;
+  --route:linear-gradient(180deg,var(--ember) 0%,var(--sun) 30%,var(--volt) 68%,var(--sky) 100%);
+  --routeh:linear-gradient(90deg,var(--ember) 0%,var(--sun) 30%,var(--volt) 68%,var(--sky) 100%);
+  --disp:"Bricolage","Segoe UI",system-ui,sans-serif;
+  --body:"Figtree","Segoe UI",system-ui,-apple-system,Roboto,sans-serif;
+  --mono:"JBMono",ui-monospace,"Cascadia Code",Consolas,monospace;
+  --bar:56px;--rail:320px;
+}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+html{-webkit-text-size-adjust:100%;scroll-padding-top:calc(var(--bar) + 16px)}
+body{margin:0;background:var(--ink);color:var(--text);font:400 17px/1.62 var(--body);overflow-x:hidden;
+  padding-bottom:env(safe-area-inset-bottom)}
+a{color:var(--sky)}
+button{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--sun);outline-offset:3px;border-radius:6px}
+::selection{background:rgba(68,102,255,.45)}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+
+/* top bar */
+.bar{position:fixed;inset:0 0 auto 0;height:calc(var(--bar) + env(safe-area-inset-top));padding:env(safe-area-inset-top) 14px 0;
+  display:flex;align-items:center;gap:10px;background:rgba(10,22,43,.88);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--line);z-index:40}
+.brand{display:flex;align-items:center;gap:10px;background:none;border:0;padding:6px 8px 6px 2px;cursor:pointer;border-radius:10px;text-decoration:none;color:var(--text)}
+.brand img{width:30px;height:30px;display:block}
+.brand b{font:600 17px/1 var(--disp);letter-spacing:-.01em}
+.bar .sp{flex:1}
+.ib{height:40px;min-width:40px;padding:0 12px;border-radius:10px;border:1px solid var(--line);background:var(--ink2);cursor:pointer;
+  display:inline-flex;align-items:center;gap:8px;font-weight:600;font-size:14.5px;text-decoration:none;color:var(--text)}
+.ib:hover{border-color:var(--line2);background:var(--ink3)}
+.ib svg{width:18px;height:18px;flex:none}
+#menuBtn{display:none}
+.barprog{position:absolute;left:0;bottom:-1px;height:2px;background:var(--routeh);width:0;transition:width .5s ease}
+
+/* layout */
+.shell{display:grid;grid-template-columns:var(--rail) minmax(0,1fr);padding-top:calc(var(--bar) + env(safe-area-inset-top));min-height:100vh}
+.rail{position:sticky;top:calc(var(--bar) + env(safe-area-inset-top));height:calc(100vh - var(--bar) - env(safe-area-inset-top));
+  overflow-y:auto;border-right:1px solid var(--line);padding:18px 14px 40px 18px;background:var(--ink)}
+main{min-width:0;padding:34px clamp(18px,4.5vw,64px) 96px}
+.wrap{max-width:760px;margin:0 auto}
+.wide{max-width:980px;margin:0 auto}
+
+/* the route: one line through every session */
+.route{list-style:none;margin:0;padding:0;position:relative}
+.route::before{content:"";position:absolute;left:9px;top:10px;bottom:10px;width:3px;border-radius:3px;background:var(--route);opacity:.9}
+.route .dom{position:relative;padding:16px 0 6px 34px;font:600 13.5px/1.3 var(--body);color:var(--mute)}
+.route .dom:first-child{padding-top:0}
+.route .dom span{color:var(--dim);font-weight:500;white-space:nowrap}
+.route a{position:relative;display:flex;gap:10px;align-items:baseline;padding:7px 10px 7px 34px;border-radius:9px;color:var(--text);text-decoration:none;line-height:1.35;font-size:15px}
+.route a::before{content:"";position:absolute;left:3px;top:.72em;width:15px;height:15px;border-radius:50%;background:var(--ink);border:3px solid var(--line2);box-sizing:border-box}
+.route a:hover{background:var(--ink2)}
+.route a .n{font:500 12.5px/1 var(--mono);color:var(--dim);min-width:1.6em}
+.route a .sc{margin-left:auto;font:600 12px/1 var(--mono);color:var(--ok);white-space:nowrap;padding-left:8px}
+.route a.done::before{background:var(--ok);border-color:var(--ok)}
+.route a.cur{background:var(--ink3)}
+.route a.cur::before{border-color:var(--sun);background:var(--sun);box-shadow:0 0 0 4px rgba(255,197,90,.18)}
+.route a.soon{color:var(--dim);cursor:default}
+.route a.soon:hover{background:none}
+.route a.soon::before{border-color:var(--line);border-style:solid;opacity:.9}
+.rail .xl{display:block;margin:18px 0 0 34px;font-size:14.5px}
+
+/* home */
+.hero{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:28px;align-items:end;margin:6px 0 34px}
+.hero h1{font:700 clamp(38px,6.4vw,72px)/.98 var(--disp);letter-spacing:-.035em;margin:0 0 18px;text-wrap:balance}
+.hero p{margin:0 0 22px;color:var(--mute);font-size:19px;max-width:34em}
+.hero .mark{width:clamp(96px,15vw,170px);height:auto;display:block;filter:drop-shadow(0 14px 40px rgba(68,102,255,.28))}
+.cta{display:flex;flex-wrap:wrap;gap:10px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;padding:0 20px;border-radius:12px;border:1px solid var(--line2);
+  background:var(--ink2);font-weight:650;font-size:16px;cursor:pointer;text-decoration:none;color:var(--text)}
+.btn:hover{background:var(--ink3)}
+.btn.pri{border:0;color:#0A162B;background:linear-gradient(100deg,var(--ember),var(--sun))}
+.btn.pri:hover{filter:brightness(1.08)}
+.stat{display:flex;gap:26px;flex-wrap:wrap;margin:0 0 30px;padding:16px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);color:var(--mute);font-size:15px}
+.stat b{color:var(--text);font:600 20px/1 var(--disp);margin-right:6px}
+.find{position:relative;margin:0 0 22px}
+.find input{width:100%;height:50px;border-radius:12px;border:1px solid var(--line);background:var(--ink2);color:var(--text);font:inherit;padding:0 16px 0 44px}
+.find input::placeholder{color:var(--dim)}
+.find svg{position:absolute;left:14px;top:15px;width:20px;height:20px;color:var(--dim)}
+.home .route a{font-size:17px;padding-top:10px;padding-bottom:10px}
+.home .route a::before{top:.85em}
+.home .route .dom{font-size:15px;padding-top:24px}
+.hits{margin:0 0 20px;padding:0;list-style:none;display:grid;gap:8px}
+.hits li{background:var(--ink2);border:1px solid var(--line);border-radius:12px;padding:12px 14px}
+.hits b{display:block}
+.hits span{color:var(--mute);font-size:15px}
+.tip{margin-top:30px;padding:16px 18px;border-radius:14px;background:var(--ink2);border:1px solid var(--line);color:var(--mute);font-size:15.5px}
+.tip b{color:var(--text)}
+footer.ft{margin-top:44px;padding-top:20px;border-top:1px solid var(--line);color:var(--dim);font-size:14px;display:grid;gap:8px}
+footer.ft button{background:none;border:0;padding:0;color:var(--sky);text-decoration:underline;cursor:pointer;font-size:14px;text-align:left}
+
+/* section */
+.crumb{color:var(--mute);font-size:15px;margin:0 0 12px}
+.crumb b{color:var(--sun);font:600 14px/1 var(--mono);margin-right:8px}
+h1.t{font:700 clamp(31px,4.8vw,50px)/1.04 var(--disp);letter-spacing:-.03em;margin:0 0 16px;text-wrap:balance}
+.lead{font-size:20.5px;line-height:1.5;color:#CBD7EC;margin:0 0 22px}
+.acts{display:flex;gap:10px;flex-wrap:wrap;margin:0 0 34px}
+.body h2{font:650 clamp(23px,3vw,29px)/1.15 var(--disp);letter-spacing:-.02em;margin:46px 0 12px;text-wrap:balance}
+.body p{margin:0 0 16px}
+.body strong{font-weight:700;color:#fff}
+.body code{font:500 .9em var(--mono);background:var(--ink3);padding:.1em .35em;border-radius:5px}
+.pull{margin:26px 0;padding:4px 0 4px 20px;border-left:4px solid;border-image:var(--route) 1;font:600 clamp(21px,2.6vw,26px)/1.28 var(--disp);letter-spacing:-.015em;text-wrap:balance}
+.note{margin:22px 0;padding:16px 18px;border-radius:14px;background:rgba(255,197,90,.08);border:1px solid rgba(255,197,90,.35)}
+.note b{display:block;color:var(--sun);margin-bottom:4px}
+.note p{margin:0}
+figure{margin:22px 0;border-radius:14px;border:1px solid var(--line);background:var(--ink2);overflow:hidden}
+figcaption{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:9px 12px 9px 16px;font-weight:650;font-size:14.5px;color:var(--mute);border-bottom:1px solid var(--line)}
+figure pre{margin:0;padding:16px;font:450 14.2px/1.6 var(--mono);white-space:pre-wrap;overflow-wrap:anywhere;color:#DCE6F7;tab-size:2}
+figure.prompt{border-color:rgba(68,102,255,.55)}
+figure.prompt figcaption{color:var(--sky)}
+figure.out.bad{border-color:rgba(255,129,119,.5)}
+figure.out.bad figcaption{color:var(--bad)}
+figure.out.good{border-color:rgba(87,211,155,.5)}
+figure.out.good figcaption{color:var(--ok)}
+figure.doc pre{color:#C5D2EA}
+mark{background:rgba(255,129,119,.22);color:#FFD9D5;border-bottom:2px solid var(--bad);padding:0 2px;border-radius:3px}
+.mk{padding:0 16px 14px;color:var(--bad);font-size:14.5px}
+.copy{height:32px;padding:0 12px;border-radius:8px;border:1px solid var(--line2);background:var(--ink3);cursor:pointer;font-weight:600;font-size:13.5px;color:var(--text)}
+.copy:hover{background:var(--line)}
+dl.defs{margin:18px 0;display:grid;gap:10px}
+dl.defs div{padding:14px 16px;border-radius:12px;background:var(--ink2);border:1px solid var(--line)}
+dl.defs dt{font:650 18px/1.2 var(--disp);margin-bottom:4px}
+dl.defs dd{margin:0;color:#CBD7EC}
+ol.steps{list-style:none;counter-reset:s;margin:20px 0;padding:0;position:relative}
+ol.steps::before{content:"";position:absolute;left:15px;top:16px;bottom:16px;width:3px;background:var(--route);border-radius:3px}
+ol.steps li{counter-increment:s;position:relative;padding:4px 0 16px 50px}
+ol.steps li::before{content:counter(s);position:absolute;left:0;top:2px;width:33px;height:33px;border-radius:50%;background:var(--ink);border:3px solid var(--line2);
+  display:grid;place-items:center;font:700 14px/1 var(--mono);box-sizing:border-box}
+ol.steps b{display:block;font:650 18px/1.3 var(--disp)}
+ol.steps span{color:#CBD7EC}
+.body ul{margin:0 0 16px;padding-left:22px}
+.body li{margin:4px 0}
+.tw{overflow-x:auto;margin:20px 0;border:1px solid var(--line);border-radius:14px}
+table{border-collapse:collapse;width:100%;font-size:15.5px;min-width:520px}
+th,td{text-align:left;padding:11px 14px;vertical-align:top;border-bottom:1px solid var(--line)}
+th{background:var(--ink2);font-weight:650;color:var(--mute);font-size:14.5px}
+tr:last-child td{border-bottom:0}
+td:first-child{font-weight:650}
+.take{margin:44px 0 0;padding:22px 22px 14px;border-radius:16px;background:var(--ink2);border:1px solid var(--line)}
+.take h2{margin:0 0 10px}
+.take ul{padding-left:20px;margin:0 0 8px}
+.prac{margin:16px 0 0;padding:18px 22px;border-radius:16px;border:1px dashed var(--line2)}
+.prac h2{margin:0 0 6px;font-size:21px}
+.prac p{margin:0;color:#CBD7EC}
+
+/* glossary term */
+.g{border-bottom:2px dotted var(--sky);color:#D9EEFF;cursor:help;border-radius:2px}
+.g:hover,.g[aria-expanded=true]{background:rgba(159,212,251,.14)}
+.pop{position:absolute;z-index:60;width:min(340px,calc(100vw - 24px));padding:14px 16px;border-radius:14px;background:#17305A;border:1px solid var(--line2);
+  box-shadow:0 18px 50px rgba(0,0,0,.55);font-size:15.5px;line-height:1.5}
+.pop b{display:block;font:650 17px/1.2 var(--disp);margin-bottom:5px;color:var(--sun)}
+.pop[hidden]{display:none}
+.scrim{position:fixed;inset:0;background:rgba(4,10,22,.6);z-index:55}
+.scrim[hidden]{display:none}
+
+/* quiz */
+.quiz{margin:52px 0 0}
+.quiz>h2{font:700 clamp(26px,3.6vw,34px)/1.1 var(--disp);letter-spacing:-.025em;margin:0 0 6px}
+.quiz>p{color:var(--mute);margin:0 0 20px}
+.q{margin:0 0 18px;padding:20px;border-radius:16px;background:var(--ink2);border:1px solid var(--line)}
+.q .qn{font:600 13.5px/1 var(--mono);color:var(--sun);margin-bottom:10px}
+.q h3{font:600 19px/1.4 var(--body);margin:0 0 14px}
+.q .hint{color:var(--sky);font-size:14.5px;font-weight:600;margin:-6px 0 12px}
+.opt{display:grid;grid-template-columns:24px minmax(0,1fr);gap:12px;width:100%;text-align:left;padding:13px 14px;margin:0 0 9px;border-radius:12px;
+  border:1.5px solid var(--line);background:var(--ink);cursor:pointer;line-height:1.45;font-size:16.5px}
+.opt:hover:not([disabled]){border-color:var(--line2);background:#0C1A33}
+.opt .box{width:22px;height:22px;border-radius:50%;border:2px solid var(--line2);margin-top:1px;display:grid;place-items:center;font:700 13px/1 var(--mono)}
+.q.multi .opt .box{border-radius:6px}
+.opt.sel .box{border-color:var(--sun);background:var(--sun);color:var(--ink)}
+.opt[disabled]{cursor:default;opacity:1;color:var(--text)}
+.opt .why{grid-column:2;color:#C4D1E8;font-size:15.5px;margin-top:6px;display:none}
+.opt .tag{display:inline-block;font:700 12px/1 var(--body);padding:4px 7px;border-radius:6px;margin-right:6px;vertical-align:1px}
+.q.done .opt .why{display:block}
+.q.done .opt.right{border-color:var(--ok);background:rgba(87,211,155,.09)}
+.q.done .opt.right .box{border-color:var(--ok);background:var(--ok);color:var(--ink)}
+.q.done .opt.right .tag{background:var(--ok);color:var(--ink)}
+.q.done .opt.wrong{border-color:var(--bad);background:rgba(255,129,119,.08)}
+.q.done .opt.wrong .box{border-color:var(--bad);background:var(--bad);color:var(--ink)}
+.q.done .opt.wrong .tag{background:var(--bad);color:var(--ink)}
+.q.done .opt.missed .tag{background:var(--ok);color:var(--ink)}
+.verdict{font-weight:700;margin:6px 0 0}
+.verdict.y{color:var(--ok)}.verdict.n{color:var(--bad)}
+.check{margin-top:4px}
+.score{display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;padding:20px;border-radius:16px;border:1px solid var(--line2);background:var(--ink3)}
+.score b{font:700 30px/1 var(--disp)}
+.score span{color:var(--mute);display:block;font-size:15px;margin-top:4px}
+.pn{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:34px}
+.pn a{padding:14px 16px;border-radius:14px;border:1px solid var(--line);background:var(--ink2);text-decoration:none;color:var(--text);line-height:1.3}
+.pn a small{display:block;color:var(--mute);margin-bottom:3px}
+.pn a.nx{text-align:right}
+.pn a:hover{border-color:var(--line2)}
+.gl{display:grid;gap:10px;margin-top:20px}
+.gl div{padding:14px 16px;border-radius:12px;background:var(--ink2);border:1px solid var(--line)}
+.gl dt{font:650 18px/1.2 var(--disp);margin-bottom:4px}
+.gl dd{margin:0;color:#CBD7EC}
+.toast{position:fixed;left:50%;bottom:calc(22px + env(safe-area-inset-bottom));transform:translateX(-50%);background:#17305A;border:1px solid var(--line2);
+  padding:10px 16px;border-radius:999px;font-weight:600;font-size:14.5px;z-index:80;box-shadow:0 10px 30px rgba(0,0,0,.5)}
+.toast[hidden]{display:none}
+
+@media (max-width:1080px){
+  .shell{grid-template-columns:minmax(0,1fr)}
+  #menuBtn{display:inline-flex}
+  .rail{position:fixed;inset:calc(var(--bar) + env(safe-area-inset-top)) auto 0 0;width:min(88vw,360px);height:auto;z-index:58;transform:translateX(-102%);
+    transition:transform .28s ease;border-right:1px solid var(--line2);box-shadow:20px 0 60px rgba(0,0,0,.5)}
+  body.open .rail{transform:none}
+}
+@media (max-width:640px){
+  body{font-size:16.5px}
+  main{padding-top:24px}
+  .hero{grid-template-columns:1fr}
+  .hero .mark{order:-1;width:84px}
+  .brand b{font-size:16px}
+  .ib span{display:none}
+  .ib{padding:0 10px}
+  .q{padding:16px 14px}
+  figure pre{font-size:13px;padding:14px}
+  .pop{position:fixed;left:12px!important;right:12px;top:auto!important;bottom:calc(12px + env(safe-area-inset-bottom));width:auto;padding:18px 18px 20px;border-radius:18px}
+  .pn{grid-template-columns:1fr}
+  .pn a.nx{text-align:left}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+@media print{
+  .bar,.rail,.acts,.copy,.pn,.scrim,.pop,.toast{display:none!important}
+  body{background:#fff;color:#111;font-size:11.5pt}
+  .shell{display:block;padding:0}main{padding:0}
+  figure,.q,.take,.note,dl.defs div{background:#fff;border-color:#bbb;break-inside:avoid}
+  figure pre,.lead,.body p,ol.steps span,dl.defs dd,.opt .why{color:#111}
+  .opt{background:#fff;color:#111}.g{border:0;color:inherit}
+  h1.t,.body h2,.pull{color:#000}
+}
+</style>
+</head>
+<body>
+<header class="bar">
+  <button class="ib" id="menuBtn" aria-label="Open contents" aria-expanded="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+  <a class="brand" href="#/" aria-label="Contents"><img src="assets/logo-transparent-64.png" alt=""><b>Claude Foundations</b></a>
+  <span class="sp"></span>
+  <a class="ib" href="#/glossary"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h11a3 3 0 0 1 3 3v13H8a3 3 0 0 1-3-3z"/><path d="M5 17a3 3 0 0 1 3-3h11"/></svg><span>Glossary</span></a>
+  <div class="barprog" id="barprog"></div>
+</header>
+<div class="shell">
+  <nav class="rail" id="rail" aria-label="All sessions"></nav>
+  <main id="view" tabindex="-1"></main>
+</div>
+<div class="scrim" id="scrim" hidden></div>
+<div class="pop" id="pop" role="tooltip" hidden></div>
+<div class="toast" id="toast" role="status" hidden></div>
+<script id="data" type="application/json">%%DATA%%</script>
+<script>
+(function(){
+"use strict";
+var D=JSON.parse(document.getElementById('data').textContent);
+var KEY='ct.v1',mem={};
+function load(){try{return JSON.parse(localStorage.getItem(KEY))||{}}catch(e){return mem}}
+function save(s){mem=s;try{localStorage.setItem(KEY,JSON.stringify(s))}catch(e){}}
+var S=load();S.quiz=S.quiz||{};
+var $=function(s,r){return (r||document).querySelector(s)},$$=function(s,r){return [].slice.call((r||document).querySelectorAll(s))};
+function esc(t){return String(t).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
+function pad(n){return (n<10?'0':'')+n}
+function has(id){return !!D.content[id]}
+function qstate(id){return S.quiz[id]||(S.quiz[id]={})}
+function result(id){ // {answered, right, total}
+  var c=D.content[id];if(!c)return null;var st=S.quiz[id]||{},a=0,r=0;
+  c.quiz.forEach(function(q,i){var e=st[i];if(e&&e.done){a++;if(isRight(q,e.sel))r++}});
+  return {answered:a,right:r,total:c.quiz.length};
+}
+function isRight(q,sel){var ok=q.o.map(function(o,i){return o.ok?i:-1}).filter(function(i){return i>=0});
+  return ok.length===sel.length&&ok.every(function(i){return sel.indexOf(i)>=0})}
+function nextUp(){for(var i=0;i<D.sections.length;i++){var s=D.sections[i];if(has(s.id)){var r=result(s.id);if(r.answered<r.total)return s.id}}return null}
+
+function routeHTML(cur,filter){
+  var h='<ol class="route">',last=-1,f=(filter||'').toLowerCase();
+  D.sections.forEach(function(s){
+    if(f&&s.title.toLowerCase().indexOf(f)<0)return;
+    if(s.d!==last){last=s.d;var dm=D.domains[s.d];h+='<li class="dom">'+esc(dm.name)+(dm.w?' <span>'+dm.w+'% of exam</span>':'')+'</li>'}
+    var r=has(s.id)?result(s.id):null,cls=[];
+    if(!has(s.id))cls.push('soon');if(r&&r.answered===r.total)cls.push('done');if(s.id===cur)cls.push('cur');
+    h+='<li><a class="'+cls.join(' ')+'" '+(has(s.id)?'href="#/s/'+s.id+'"':'aria-disabled="true"')+(s.id===cur?' aria-current="page"':'')+'>'+
+      '<span class="n">'+pad(s.id)+'</span><span>'+esc(s.title)+(has(s.id)?'':' <span class="sr">(coming soon)</span>')+'</span>'+
+      (r&&r.answered===r.total?'<span class="sc">'+r.right+'/'+r.total+'</span>':'')+'</a></li>';
+  });
+  return h+'</ol>';
+}
+function drawRail(cur){$('#rail').innerHTML=routeHTML(cur)+'<a class="xl" href="#/glossary">Glossary</a>'}
+function overall(){var done=0,avail=0;D.sections.forEach(function(s){if(has(s.id)){avail++;var r=result(s.id);if(r.answered===r.total)done++}});return {done:done,avail:avail}}
+function drawProg(){var o=overall();$('#barprog').style.width=(o.avail?Math.round(100*o.done/D.sections.length):0)+'%'}
+
+/* ---------- views ---------- */
+function home(){
+  var o=overall(),nx=nextUp(),first=D.sections.filter(function(s){return has(s.id)})[0];
+  var started=Object.keys(S.quiz).some(function(k){return Object.keys(S.quiz[k]).length});
+  var cta=nx?'<a class="btn pri" href="#/s/'+nx+'">'+(started?'Continue with session '+nx:'Start session '+nx)+'</a>':
+    '<a class="btn pri" href="#/s/'+first.id+'">Review from session '+first.id+'</a>';
+  var h='<div class="wide home"><section class="hero"><div><h1>Thirty-two short sessions to exam day.</h1>'+
+    '<p>A study guide for the Claude Certified Associate, Foundations exam. Read a section, sit its five questions, see why each answer is right or wrong.</p>'+
+    '<div class="cta">'+cta+'<button class="btn" id="inst" hidden>Install on this device</button></div></div>'+
+    '<img class="mark" src="assets/logo-transparent-1024.png" alt="" width="170" height="170"></section>'+
+    '<div class="stat"><div><b>'+o.avail+'</b>of '+D.sections.length+' sessions published</div><div><b>'+o.done+'</b>quizzes finished on this device</div><div><b>'+Object.keys(D.glossary).length+'</b>glossary terms</div></div>'+
+    '<div class="find"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>'+
+    '<label class="sr" for="find">Find a session or term</label><input id="find" type="search" placeholder="Find a session or a term" autocomplete="off"></div>'+
+    '<ul class="hits" id="hits"></ul><div id="list">'+routeHTML(null)+'</div>'+
+    '<div class="tip" id="tip"><b>Keep it on your phone.</b> Open this page in your phone browser, then choose Add to Home screen from the browser menu (on iPhone: Share, then Add to Home Screen). It opens like an app and works offline.</div>'+
+    '<footer class="ft"><div>Built by Justin VanAusdall for his team. Unofficial study material, not affiliated with or endorsed by Anthropic. Practice questions are original and are not taken from the exam.</div>'+
+    '<div>Your quiz answers are stored only on this device. <button id="reset">Clear my answers on this device</button></div></footer></div>';
+  $('#view').innerHTML=h;document.title='Claude Foundations training';
+  $('#find').addEventListener('input',function(){
+    var v=this.value.trim();$('#list').innerHTML=routeHTML(null,v);
+    var hits='';if(v.length>1){var f=v.toLowerCase();Object.keys(D.glossary).forEach(function(k){var g=D.glossary[k];
+      if(g[0].toLowerCase().indexOf(f)>=0)hits+='<li><b>'+esc(g[0])+'</b><span>'+esc(g[1])+'</span></li>'})}
+    $('#hits').innerHTML=hits;
+  });
+  var armed=false;
+  $('#reset').addEventListener('click',function(){
+    if(!armed){armed=true;this.textContent='Tap again to confirm. This cannot be undone.';return}
+    S={quiz:{}};save(S);toast('Answers cleared');go();
+  });
+  if(deferred){var b=$('#inst');b.hidden=false;b.onclick=function(){deferred.prompt();deferred=null;b.hidden=true}}
+  if(window.matchMedia('(display-mode: standalone)').matches||navigator.standalone)$('#tip').hidden=true;
+  drawRail(null);
+}
+function section(id){
+  var c=D.content[id],s=D.sections[id-1];if(!c){location.hash='#/';return}
+  var dm=D.domains[s.d],prev=null,next=null;
+  D.sections.forEach(function(x){if(has(x.id)){if(x.id<id)prev=x;if(x.id>id&&!next)next=x}});
+  var h='<article class="wrap"><p class="crumb"><b>'+pad(id)+'</b>'+esc(dm.name)+'</p><h1 class="t" id="top">'+esc(s.title)+'</h1><p class="lead">'+c.lead+'</p>'+
+    '<div class="acts"><a class="btn" href="'+c.deck+'">Open the slides</a><a class="btn" href="#quiz">Go to the questions</a></div>'+
+    '<div class="body">'+c.html+'</div>'+
+    '<section class="take"><h2>Keep these</h2><ul>'+c.takeaways.map(function(t){return '<li>'+t+'</li>'}).join('')+'</ul></section>'+
+    '<section class="prac"><h2>Try it this week</h2><p>'+c.practice+'</p></section>'+
+    '<section class="quiz" id="quiz"><h2>Five questions</h2><p>Pick an answer to see the reason behind every option.</p><div id="qs"></div><div id="score"></div></section>'+
+    '<nav class="pn" aria-label="Other sessions">'+(prev?'<a href="#/s/'+prev.id+'"><small>Previous</small>'+esc(prev.title)+'</a>':'<span></span>')+
+    (next?'<a class="nx" href="#/s/'+next.id+'"><small>Next</small>'+esc(next.title)+'</a>':'<a class="nx" href="#/"><small>Back to</small>All sessions</a>')+'</nav></article>';
+  $('#view').innerHTML=h;document.title=s.title+' | Claude Foundations';
+  $$('figure.prompt',$('#view')).forEach(function(f){
+    var b=document.createElement('button');b.className='copy';b.textContent='Copy';
+    b.onclick=function(){copy($('pre',f).textContent,b)};$('figcaption',f).appendChild(b);
+  });
+  drawQuiz(id);drawRail(id);
+}
+function drawQuiz(id){
+  var c=D.content[id],st=qstate(id),box=$('#qs');box.innerHTML='';
+  c.quiz.forEach(function(q,i){
+    var e=st[i]||(st[i]={sel:[],done:false});
+    if(!e.ord||e.ord.length!==q.o.length){e.ord=q.o.map(function(_,k){return k});for(var k=e.ord.length-1;k>0;k--){var j=Math.floor(Math.random()*(k+1)),t=e.ord[k];e.ord[k]=e.ord[j];e.ord[j]=t}}
+    var el=document.createElement('div');el.className='q'+(q.multi?' multi':'')+(e.done?' done':'');
+    var h='<div class="qn">Question '+(i+1)+' of '+c.quiz.length+'</div><h3 id="q'+i+'">'+esc(q.q)+'</h3>'+(q.multi?'<p class="hint">Choose two.</p>':'')+'<div role="group" aria-labelledby="q'+i+'">';
+    e.ord.forEach(function(k){var o=q.o[k],sel=e.sel.indexOf(k)>=0,cls='opt'+(sel?' sel':''),tag='',mk='';
+      if(e.done){if(o.ok){cls+=sel?' right':' right missed';tag='<span class="tag">'+(sel?'Correct':'Correct answer')+'</span>';mk='✓'}
+        else if(sel){cls+=' wrong';tag='<span class="tag">Your answer</span>';mk='✕'}}
+      else if(sel)mk=q.multi?'✓':'';
+      h+='<button class="'+cls+'" data-k="'+k+'"'+(e.done?' disabled':'')+' aria-pressed="'+sel+'"><span class="box" aria-hidden="true">'+mk+'</span><span>'+esc(o.t)+
+        '</span><span class="why">'+tag+esc(o.why)+'</span></button>'});
+    h+='</div>';
+    if(q.multi&&!e.done)h+='<button class="btn check" data-check="1"'+(e.sel.length===2?'':' disabled style="opacity:.5"')+'>Check my answer</button>';
+    if(e.done){var ok=isRight(q,e.sel);h+='<p class="verdict '+(ok?'y':'n')+'">'+(ok?'Right.':'Not this time. Read the reasons above.')+'</p>'}
+    el.innerHTML=h;
+    el.addEventListener('click',function(ev){
+      var b=ev.target.closest('button');if(!b||e.done)return;
+      if(b.dataset.check){if(e.sel.length!==2)return;e.done=true}
+      else if(b.dataset.k!==undefined){var k=+b.dataset.k;
+        if(q.multi){var at=e.sel.indexOf(k);if(at>=0)e.sel.splice(at,1);else{if(e.sel.length>=2)e.sel.shift();e.sel.push(k)}}
+        else{e.sel=[k];e.done=true}}
+      save(S);var y=window.scrollY;drawQuiz(id);drawRail(id);drawProg();window.scrollTo(0,y);
+    });
+    box.appendChild(el);
+  });
+  var r=result(id),sc=$('#score');
+  if(r.answered===r.total){
+    sc.innerHTML='<div class="score"><div><b>'+r.right+' of '+r.total+'</b><span>'+(r.right===r.total?'Clean sheet.':r.right>=4?'Solid. Re-read the reasons on the one you missed.':'Go back through the section, then try again.')+'</span></div><button class="btn" id="again">Try the questions again</button></div>';
+    $('#again').onclick=function(){S.quiz[id]={};save(S);drawQuiz(id);drawRail(id);drawProg();$('#quiz').scrollIntoView()};
+  }else sc.innerHTML='';
+  save(S);
+}
+function glossary(){
+  var keys=Object.keys(D.glossary).sort(function(a,b){return D.glossary[a][0].localeCompare(D.glossary[b][0])});
+  $('#view').innerHTML='<div class="wrap"><p class="crumb">Reference</p><h1 class="t">Glossary</h1><p class="lead">Every underlined term in the sessions, in one place.</p><dl class="gl">'+
+    keys.map(function(k){var g=D.glossary[k];return '<div id="g-'+k+'"><dt>'+esc(g[0])+'</dt><dd>'+esc(g[1])+'</dd></div>'}).join('')+'</dl></div>';
+  document.title='Glossary | Claude Foundations';drawRail(null);
+}
+function go(){
+  closePop();document.body.classList.remove('open');$('#menuBtn').setAttribute('aria-expanded','false');$('#scrim').hidden=true;
+  var m=location.hash.match(/^#\/s\/(\d+)/);
+  if(location.hash==='#quiz'){var q=$('#quiz');if(q){q.scrollIntoView();return}}
+  if(m)section(+m[1]);else if(location.hash==='#/glossary')glossary();else home();
+  drawProg();window.scrollTo(0,0);
+}
+var lastRoute='';
+window.addEventListener('hashchange',function(){
+  if(location.hash==='#quiz'){var q=$('#quiz');if(q){q.scrollIntoView({behavior:'smooth'});history.replaceState(null,'',lastRoute||'#/');return}}
+  lastRoute=location.hash;go();
+});
+
+/* ---------- glossary pop-up ---------- */
+var pop=$('#pop'),cur=null,fine=window.matchMedia('(hover:hover) and (pointer:fine)').matches,hideT;
+function openPop(el){
+  var g=D.glossary[el.dataset.g];if(!g)return;clearTimeout(hideT);
+  if(cur&&cur!==el)cur.setAttribute('aria-expanded','false');cur=el;el.setAttribute('aria-expanded','true');
+  pop.innerHTML='<b>'+esc(g[0])+'</b>'+esc(g[1]);pop.hidden=false;
+  if(window.innerWidth>640){var r=el.getBoundingClientRect(),w=pop.offsetWidth,h=pop.offsetHeight;
+    var x=Math.max(12,Math.min(window.innerWidth-w-12,r.left+r.width/2-w/2)),y=r.bottom+10;
+    if(y+h>window.innerHeight-10&&r.top-h-10>60)y=r.top-h-10;
+    pop.style.left=(x+window.scrollX)+'px';pop.style.top=(y+window.scrollY)+'px'}
+  else{pop.style.left='';pop.style.top=''}
+}
+function closePop(){if(cur){cur.setAttribute('aria-expanded','false');cur=null}pop.hidden=true}
+document.addEventListener('click',function(e){
+  var g=e.target.closest('.g');
+  if(g){e.preventDefault();if(cur===g&&!fine)closePop();else openPop(g);return}
+  if(!e.target.closest('#pop'))closePop();
+});
+if(fine){
+  document.addEventListener('mouseover',function(e){var g=e.target.closest('.g');if(g)openPop(g);else if(e.target.closest('#pop'))clearTimeout(hideT)});
+  document.addEventListener('mouseout',function(e){if(e.target.closest('.g')||e.target.closest('#pop')){clearTimeout(hideT);hideT=setTimeout(closePop,220)}});
+}
+document.addEventListener('keydown',function(e){
+  if(e.key==='Escape'){closePop();document.body.classList.remove('open');$('#scrim').hidden=true}
+  if((e.key==='Enter'||e.key===' ')&&e.target.classList&&e.target.classList.contains('g')){e.preventDefault();if(cur===e.target)closePop();else openPop(e.target)}
+});
+document.addEventListener('focusout',function(e){if(e.target.classList&&e.target.classList.contains('g'))closePop()});
+window.addEventListener('scroll',function(){if(cur&&window.innerWidth>640&&!fine)closePop()},{passive:true});
+
+/* ---------- menu, copy, toast, install ---------- */
+$('#menuBtn').addEventListener('click',function(){var o=document.body.classList.toggle('open');this.setAttribute('aria-expanded',o);$('#scrim').hidden=!o});
+$('#scrim').addEventListener('click',function(){document.body.classList.remove('open');this.hidden=true;$('#menuBtn').setAttribute('aria-expanded','false')});
+function toast(t){var el=$('#toast');el.textContent=t;el.hidden=false;clearTimeout(toast.t);toast.t=setTimeout(function(){el.hidden=true},1800)}
+function copy(text,btn){
+  function ok(){btn.textContent='Copied';setTimeout(function(){btn.textContent='Copy'},1500)}
+  if(navigator.clipboard&&window.isSecureContext){navigator.clipboard.writeText(text).then(ok,fb)}else fb();
+  function fb(){var ta=document.createElement('textarea');ta.value=text;ta.style.position='fixed';ta.style.opacity='0';document.body.appendChild(ta);ta.select();
+    try{document.execCommand('copy');ok()}catch(e){toast('Select the text and copy it manually')}document.body.removeChild(ta)}
+}
+var deferred=null;
+window.addEventListener('beforeinstallprompt',function(e){e.preventDefault();deferred=e;var b=$('#inst');if(b){b.hidden=false;b.onclick=function(){deferred.prompt();deferred=null;b.hidden=true}}});
+if('serviceWorker' in navigator&&(location.protocol==='https:'||location.hostname==='localhost')){
+  window.addEventListener('load',function(){navigator.serviceWorker.register('sw.js').catch(function(){})});
+}
+lastRoute=location.hash;go();
+})();
+</script>
+</body>
+</html>
