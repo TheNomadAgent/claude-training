@@ -278,10 +278,10 @@ td:first-child{font-weight:650}
 (function(){
 "use strict";
 var D=JSON.parse(document.getElementById('data').textContent);
-var KEY='ct.v1',mem={};
-function load(){try{return JSON.parse(localStorage.getItem(KEY))||{}}catch(e){return mem}}
-function save(s){mem=s;try{localStorage.setItem(KEY,JSON.stringify(s))}catch(e){}}
-var S=load();S.quiz=S.quiz||{};
+/* Answers live in memory only: nothing is stored or sent, and every visit starts clean. */
+try{localStorage.removeItem('ct.v1')}catch(e){}
+var S={quiz:{}};
+function save(){}
 var $=function(s,r){return (r||document).querySelector(s)},$$=function(s,r){return [].slice.call((r||document).querySelectorAll(s))};
 function esc(t){return String(t).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
 function pad(n){return (n<10?'0':'')+n}
@@ -323,24 +323,19 @@ function home(){
     '<p>A study guide for the Claude Certified Associate, Foundations exam. Read a section, sit its five questions, see why each answer is right or wrong.</p>'+
     '<div class="cta">'+cta+'<button class="btn" id="inst" hidden>Install on this device</button></div></div>'+
     '<img class="mark" src="assets/logo-transparent-1024.png" alt="" width="170" height="170"></section>'+
-    '<div class="stat"><div><b>'+o.avail+'</b>of '+D.sections.length+' sessions published</div><div><b>'+o.done+'</b>quizzes finished on this device</div><div><b>'+Object.keys(D.glossary).length+'</b>glossary terms</div></div>'+
+    '<div class="stat"><div><b>'+o.avail+'</b>of '+D.sections.length+' sessions published</div><div><b>'+o.done+'</b>quizzes finished this visit</div><div><b>'+Object.keys(D.glossary).length+'</b>glossary terms</div></div>'+
     '<div class="find"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>'+
     '<label class="sr" for="find">Find a session or term</label><input id="find" type="search" placeholder="Find a session or a term" autocomplete="off"></div>'+
     '<ul class="hits" id="hits"></ul><div id="list">'+routeHTML(null)+'</div>'+
     '<div class="tip" id="tip"><b>Keep it on your phone.</b> Open this page in your phone browser, then choose Add to Home screen from the browser menu (on iPhone: Share, then Add to Home Screen). It opens like an app and works offline.</div>'+
     '<footer class="ft"><div>Built by Justin VanAusdall for his team. Unofficial study material, not affiliated with or endorsed by Anthropic. Practice questions are original and are not taken from the exam.</div>'+
-    '<div>Your quiz answers are stored only on this device. <button id="reset">Clear my answers on this device</button></div></footer></div>';
+    '<div>Your quiz answers are never saved or sent anywhere. They clear every time you open or reload this page.</div></footer></div>';
   $('#view').innerHTML=h;document.title='Claude Foundations training';
   $('#find').addEventListener('input',function(){
     var v=this.value.trim();$('#list').innerHTML=routeHTML(null,v);
     var hits='';if(v.length>1){var f=v.toLowerCase();Object.keys(D.glossary).forEach(function(k){var g=D.glossary[k];
       if(g[0].toLowerCase().indexOf(f)>=0)hits+='<li><b>'+esc(g[0])+'</b><span>'+esc(g[1])+'</span></li>'})}
     $('#hits').innerHTML=hits;
-  });
-  var armed=false;
-  $('#reset').addEventListener('click',function(){
-    if(!armed){armed=true;this.textContent='Tap again to confirm. This cannot be undone.';return}
-    S={quiz:{}};save(S);toast('Answers cleared');go();
   });
   if(deferred){var b=$('#inst');b.hidden=false;b.onclick=function(){deferred.prompt();deferred=null;b.hidden=true}}
   if(window.matchMedia('(display-mode: standalone)').matches||navigator.standalone)$('#tip').hidden=true;
@@ -395,7 +390,7 @@ function drawQuiz(id){
   var r=result(id),sc=$('#score');
   if(r.answered===r.total){
     sc.innerHTML='<div class="score"><div><b>'+r.right+' of '+r.total+'</b><span>'+(r.right===r.total?'Clean sheet.':r.right>=4?'Solid. Re-read the reasons on the one you missed.':'Go back through the section, then try again.')+'</span></div><button class="btn" id="again">Try the questions again</button></div>';
-    $('#again').onclick=function(){S.quiz[id]={};save(S);drawQuiz(id);drawRail(id);drawProg();$('#quiz').scrollIntoView()};
+    $('#again').onclick=function(){S.quiz[id]={};drawQuiz(id);drawRail(id);drawProg();$('#quiz').scrollIntoView()};
   }else sc.innerHTML='';
   save(S);
 }
@@ -462,6 +457,11 @@ window.addEventListener('beforeinstallprompt',function(e){e.preventDefault();def
 if('serviceWorker' in navigator&&(location.protocol==='https:'||location.hostname==='localhost')){
   window.addEventListener('load',function(){navigator.serviceWorker.register('sw.js').catch(function(){})});
 }
+/* start clean when a page comes back from the browser's back-forward cache, or after 30 minutes in the background */
+var hiddenAt=0;
+function fresh(){S={quiz:{}};go()}
+window.addEventListener('pageshow',function(e){if(e.persisted)fresh()});
+document.addEventListener('visibilitychange',function(){if(document.hidden)hiddenAt=Date.now();else if(hiddenAt&&Date.now()-hiddenAt>18e5)fresh()});
 lastRoute=location.hash;go();
 })();
 </script>
