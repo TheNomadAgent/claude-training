@@ -459,7 +459,11 @@ function newAttempt(k,timed,prev){var x=D.exams[k],n=x.q.length,ids=[],qo,oo={},
   qo.forEach(function(qi,pos){var base=x.q[qi].o.map(function(_,j){return j}),o,t=0;do{o=shuf(base)}while(same(o,po[qi])&&++t<50);oo[pos]=o});
   return {v:x.v,qo:qo,oo:oo,ans:{},flag:{},cur:0,done:false,timed:!!timed,left:timed?x.min*6e4:0,end:timed?Date.now()+x.min*6e4:0,n:((prev&&prev.n)||0)+1}}
 function exq(k,pos){return D.exams[k].q[S.exam[k].qo[pos]]}
-function exok(k,pos){var st=S.exam[k],a=st.ans[pos];return a!==undefined&&st.oo[pos][a]===exq(k,pos).a}
+function sel(st,pos){var a=st.ans[pos];return a===undefined?[]:(a instanceof Array?a:[a])}
+function isAns(k,pos){return sel(S.exam[k],pos).length===exq(k,pos).a.length}
+function exok(k,pos){var st=S.exam[k],q=exq(k,pos),a=sel(st,pos);return a.length===q.a.length&&a.every(function(j){return q.a.indexOf(st.oo[pos][j])>=0})}
+function pick(k,pos,j){var st=S.exam[k],q=exq(k,pos);if(q.a.length<2){st.ans[pos]=j;return}var a=sel(st,pos).slice(),at=a.indexOf(j);if(at>=0)a.splice(at,1);else{if(a.length>=q.a.length)a.shift();a.push(j)}if(a.length)st.ans[pos]=a;else delete st.ans[pos]}
+var NUM=['','one','two','three','four'];
 function stopTimer(){if(tick){clearInterval(tick);tick=null}Object.keys(S.exam).forEach(function(k){var t=S.exam[k];if(t.timed&&!t.done&&t.end){t.left=Math.max(0,t.end-Date.now());t.end=0}})}
 function examScore(k){var st=S.exam[k],n=0;if(!st)return 0;st.qo.forEach(function(_,pos){if(exok(k,pos))n++});return n}
 function fmt(ms){var s=Math.max(0,Math.ceil(ms/1000)),m=Math.floor(s/60);return (m<10?'0':'')+m+':'+(s%60<10?'0':'')+(s%60)}
@@ -470,7 +474,7 @@ function exam(k){
 function examIntro(k,prev){
   var x=D.exams[k];
   $('#view').innerHTML='<div class="wrap"><p class="crumb">Practice exam</p><h1 class="t">'+esc(x.title)+'</h1>'+
-    '<p class="lead">'+x.q.length+' scenario questions, one correct answer each, spread across the seven exam domains in the same proportions as the real exam. You see the answers and the reasons only after you finish.</p>'+
+    '<p class="lead">'+x.q.length+' scenario questions spread across the seven exam domains in the same proportions as the real exam. Most have one correct answer. Ten ask you to choose two, and those score only if you pick both. You see the answers and the reasons only after you finish.</p>'+
     '<div class="facts"><div><b>'+x.q.length+'</b>questions</div><div><b>'+x.min+' min</b>if you use the timer</div><div><b>'+x.target+' of '+x.q.length+'</b>a good score to aim for</div></div>'+
     '<div class="cta"><button class="btn pri" id="go1">Start</button><button class="btn" id="go2">Start with a '+x.min+'-minute timer</button></div>'+
     '<div class="tip">You can jump between questions, change answers and flag any you want to come back to. Your progress and your result are saved in this browser, on this device only, until you start the exam again. Nothing is sent anywhere and nobody else can see it. '+
@@ -479,21 +483,21 @@ function examIntro(k,prev){
   $('#go1').onclick=function(){start(false)};$('#go2').onclick=function(){start(true)};
 }
 function examQ(k){
-  var x=D.exams[k],st=S.exam[k],i=st.cur,q=exq(k,i),ord=st.oo[i],n=x.q.length,left=n-Object.keys(st.ans).length;
+  var x=D.exams[k],st=S.exam[k],i=st.cur,q=exq(k,i),ord=st.oo[i],n=x.q.length,multi=q.a.length>1,mine=sel(st,i),left=0;st.qo.forEach(function(_,j){if(!isAns(k,j))left++});
   saveX();
   var h='<div class="wrap exq"><div class="ex-top"><p class="crumb">'+esc(x.title)+'</p>'+(st.timed?'<span class="timer" id="tm"></span>':'')+'</div><ol class="strip">';
-  st.qo.forEach(function(_,j){var c=[];if(st.ans[j]!==undefined)c.push('ans');if(st.flag[j])c.push('flag');if(j===i)c.push('cur');
-    h+='<li><button class="'+c.join(' ')+'" data-j="'+j+'" aria-label="Question '+(j+1)+(st.ans[j]!==undefined?', answered':'')+(st.flag[j]?', flagged':'')+'"'+(j===i?' aria-current="true"':'')+'>'+(j+1)+'</button></li>'});
-  h+='</ol><div class="qn">Question '+(i+1)+' of '+n+'</div><h2 id="exh">'+esc(q.q)+'</h2><div role="radiogroup" aria-labelledby="exh">';
-  ord.forEach(function(oi,j){var o=q.o[oi],sel=st.ans[i]===j;
-    h+='<button class="opt'+(sel?' sel':'')+'" role="radio" aria-checked="'+sel+'" data-o="'+j+'"><span class="box let" aria-hidden="true">'+LET[j]+'</span><span>'+esc(o.t)+'</span></button>'});
+  st.qo.forEach(function(_,j){var c=[],an=isAns(k,j);if(an)c.push('ans');if(st.flag[j])c.push('flag');if(j===i)c.push('cur');
+    h+='<li><button class="'+c.join(' ')+'" data-j="'+j+'" aria-label="Question '+(j+1)+(an?', answered':'')+(st.flag[j]?', flagged':'')+'"'+(j===i?' aria-current="true"':'')+'>'+(j+1)+'</button></li>'});
+  h+='</ol><div class="qn">Question '+(i+1)+' of '+n+'</div><h2 id="exh">'+esc(q.q)+'</h2>'+(multi?'<p class="hint">Choose '+NUM[q.a.length]+'.</p>':'')+'<div role="'+(multi?'group':'radiogroup')+'" aria-labelledby="exh">';
+  ord.forEach(function(oi,j){var o=q.o[oi],on=mine.indexOf(j)>=0;
+    h+='<button class="opt'+(on?' sel':'')+'" role="'+(multi?'checkbox':'radio')+'" aria-checked="'+on+'" data-o="'+j+'"><span class="box let" aria-hidden="true">'+LET[j]+'</span><span>'+esc(o.t)+'</span></button>'});
   h+='</div><div class="exnav"><button class="btn" id="pv"'+(i?'':' disabled')+'>Previous</button><button class="btn'+(st.flag[i]?' on':'')+'" id="fl" aria-pressed="'+!!st.flag[i]+'">'+(st.flag[i]?'Flagged':'Flag for review')+'</button>'+
     '<span class="sp"></span>'+(i<n-1?'<button class="btn pri" id="nx">Next</button>':'')+'<button class="btn" id="fin">Finish exam</button></div><div id="warn"></div></div>';
   $('#view').innerHTML=h;
   var cb=$('.strip .cur'),sp=$('.strip');if(cb&&sp.scrollWidth>sp.clientWidth)sp.scrollLeft=cb.parentNode.offsetLeft-sp.clientWidth/2+18;
   function to(j,top){st.cur=j;var y=window.scrollY;examQ(k);window.scrollTo(0,top?0:y)}
   $$('.strip button').forEach(function(b){b.onclick=function(){to(+b.dataset.j)}});
-  $$('.opt[data-o]').forEach(function(b){b.onclick=function(){st.ans[i]=+b.dataset.o;to(i)}});
+  $$('.opt[data-o]').forEach(function(b){b.onclick=function(){pick(k,i,+b.dataset.o);to(i)}});
   $('#pv').onclick=function(){if(i)to(i-1,true)};if($('#nx'))$('#nx').onclick=function(){to(i+1,true)};
   $('#fl').onclick=function(){st.flag[i]=!st.flag[i];to(i)};
   $('#fin').onclick=function(){
@@ -520,10 +524,10 @@ function examResult(k){
       h+='<li>'+(has(+s)?'<a href="#/s/'+s+'">'+t+'</a>':t+' <span style="color:var(--dim)">(not published yet)</span>')+'<span style="color:var(--mute)">, '+ses[s]+' missed</span></li>'});
     h+='</ul>'}
   h+='<h2 class="h2">Every question, with reasons</h2><div class="cta" style="margin:10px 0 18px"><button class="btn'+(st.only?' on':'')+'" id="only" aria-pressed="'+!!st.only+'">'+(st.only?'Showing missed only':'Show only the ones I missed')+'</button><button class="btn" id="redo">Start this exam again</button></div><div id="redow"></div>';
-  st.qo.forEach(function(qi,pos){var q=x.q[qi],a=st.ans[pos],ok=exok(k,pos),ord=st.oo[pos];if(st.only&&ok)return;
-    h+='<div class="q done"><div class="qn">Question '+(pos+1)+(a===undefined?', not answered':'')+'</div><h3>'+esc(q.q)+'</h3>';
+  st.qo.forEach(function(qi,pos){var q=x.q[qi],a=sel(st,pos),ok=exok(k,pos),ord=st.oo[pos];if(st.only&&ok)return;
+    h+='<div class="q done"><div class="qn">Question '+(pos+1)+(q.a.length>1?', choose '+NUM[q.a.length]:'')+(a.length?'':', not answered')+(a.length&&a.length<q.a.length?', incomplete':'')+'</div><h3>'+esc(q.q)+'</h3>';
     ord.forEach(function(oi,j){var o=q.o[oi],cls='opt',tag='';
-      if(oi===q.a){cls+=' right'+(a===j?'':' missed');tag='<span class="tag">'+(a===j?'Correct':'Correct answer')+'</span>'}else if(a===j){cls+=' wrong';tag='<span class="tag">Your answer</span>'}
+      var me=a.indexOf(j)>=0;if(q.a.indexOf(oi)>=0){cls+=' right'+(me?'':' missed');tag='<span class="tag">'+(me?'Correct':'Correct answer')+'</span>'}else if(me){cls+=' wrong';tag='<span class="tag">Your answer</span>'}
       h+='<div class="'+cls+'"><span class="box let" aria-hidden="true">'+LET[j]+'</span><span>'+esc(o.t)+'</span><span class="why">'+tag+esc(o.why)+'</span></div>'});
     h+='</div>'});
   if(st.only&&sc===n)h+='<p class="lead">Nothing missed.</p>';
@@ -537,7 +541,7 @@ function examResult(k){
 document.addEventListener('keydown',function(e){
   var m=location.hash.match(/^#\/exam\/(\d+)/);if(!m||e.metaKey||e.ctrlKey||e.altKey)return;var st=S.exam[m[1]];if(!st||st.done)return;
   var x=D.exams[m[1]],k=e.key.toUpperCase(),j=LET.indexOf(k);if(j<0&&/^[1-5]$/.test(k))j=+k-1;
-  if(j>=0&&j<st.oo[st.cur].length){st.ans[st.cur]=j;examQ(m[1])}
+  if(j>=0&&j<st.oo[st.cur].length){pick(m[1],st.cur,j);examQ(m[1])}
   else if(e.key==='ArrowRight'&&st.cur<x.q.length-1){st.cur++;examQ(m[1])}
   else if(e.key==='ArrowLeft'&&st.cur>0){st.cur--;examQ(m[1])}
 });

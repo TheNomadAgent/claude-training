@@ -77,7 +77,7 @@ SESSION = {
         ("note", "Watch the absolute words", "\"Always\", \"never\", \"guarantees\" and \"all\" are rarely right in this exam. The subject is judgement, and judgement depends on context."),
 
         ("h", "Multiple response questions"),
-        ("p", "Some questions ask you to select more than one answer, and they tell you how many. Read the instruction line first. Treat each option as its own true or false question against the scenario, then check you have selected the number asked for. Every section quiz in this guide has one \"choose two\" question so you can practise the habit. The five practice exams here are single answer only, so use the section quizzes for this."),
+        ("p", "Some questions ask you to select more than one answer, and they tell you how many. Read the instruction line first. Treat each option as its own true or false question against the scenario, then check you have selected the number asked for. Every section quiz in this guide has one \"choose two\" question, and each practice exam has ten. In the practice exams a \"choose two\" question scores only if you pick both correct options. That is the strict reading. Check the official guide for how the real exam scores them."),
 
         ("h", "Pacing"),
         ("p", "Sixty questions in 120 minutes is two minutes each. Most people do not need all of it, and you want time in hand at the end."),
@@ -90,7 +90,7 @@ SESSION = {
         ("p", "A quick checkpoint: you should be at about question 20 after 25 minutes and about question 40 after 50."),
 
         ("h", "How the practice exams here work"),
-        ("p", "There are five practice exams in the menu. Each has 60 questions spread across the seven domains in the same proportions as the real exam: 8, 13, 7, 10, 7, 9 and 6. All 300 questions are different."),
+        ("p", "There are five practice exams in the menu. Each has 60 questions spread across the seven domains in the same proportions as the real exam: 8, 13, 7, 10, 7, 9 and 6. All 300 questions are different. Fifty of each exam's questions have one correct answer and ten ask you to choose two."),
         ("table", ["Feature", "How it works"], [
             ["Timer", "Optional. \"Start with a 120-minute timer\" gives you the real time limit. The clock pauses if you leave the exam and resumes when you come back"],
             ["Moving around", "Tap any number in the strip, or use Previous and Next. On a keyboard, A to D or 1 to 4 answers and the arrow keys move"],

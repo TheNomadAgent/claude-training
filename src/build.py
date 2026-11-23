@@ -11,6 +11,7 @@ ROOT = os.path.dirname(HERE)
 sys.path.insert(0, HERE)
 from content.sections import DOMAINS, SECTIONS
 from content.glossary import GLOSSARY
+from content.exam_multi import M as MULTI
 
 BASE = "https://thenomadagent.github.io/claude-training/"
 QR_JS = os.environ.get("QR_NODE_PATH", "/home/claude/work/node_modules")
@@ -163,12 +164,15 @@ def main():
             ex = importlib.import_module("content.exam%d" % n).EXAM
         except ModuleNotFoundError:
             continue
-        qs = ex["questions"]
+        qs = [(a, b, c, 1) for a, b, c in ex["questions"]]
+        for m in MULTI.get(n, []):
+            at = max(i for i, q_ in enumerate(qs) if q_[0] == m[0] and q_[3] == 1)
+            qs[at] = m
         got = [0] * 7
-        for s_, q, opts in qs:
-            if len(opts) != 4:
+        for s_, q, opts, k_ in qs:
+            if len(opts) not in ((4,) if k_ == 1 else (4, 5)):
                 raise SystemExit("exam %d: need 4 options: %s" % (n, q[:60]))
-            if len(set(o for o, _ in opts)) != 4:
+            if len(set(o for o, _ in opts)) != len(opts):
                 raise SystemExit("exam %d: duplicate option: %s" % (n, q[:60]))
             if q in seen:
                 raise SystemExit("exam %d: question repeats exam %d: %s" % (n, seen[q], q[:60]))
@@ -176,9 +180,9 @@ def main():
             got[SECTIONS[s_ - 1][0]] += 1
         if len(qs) == 60 and got != want:
             raise SystemExit("exam %d: domain counts %s, want %s" % (n, got, want))
-        ver = hashlib.sha256("|".join(q for _, q, _ in qs).encode("utf-8")).hexdigest()[:8]
+        ver = hashlib.sha256("|".join(q for _, q, _, _ in qs).encode("utf-8")).hexdigest()[:8]
         data["exams"][n] = {"title": ex["title"], "min": ex["minutes"], "target": ex["target"], "v": ver,
-                            "q": [{"s": s_, "q": q, "a": 0, "o": [{"t": o, "why": w} for o, w in opts]} for s_, q, opts in qs]}
+                            "q": [{"s": s_, "q": q, "a": list(range(k_)), "o": [{"t": o, "why": w} for o, w in opts]} for s_, q, opts, k_ in qs]}
     deck_tpl = open(os.path.join(HERE, "deck.html"), encoding="utf-8").read()
     fonts = {"F_DISP": b64("assets/fonts/bricolage.woff2"), "F_BODY": b64("assets/fonts/figtree.woff2"), "F_MONO": b64("assets/fonts/jetbrains.woff2")}
     logo_small, logo_big, icon32 = b64("assets/logo-transparent-64.png"), b64("assets/logo-transparent-256.png"), b64("assets/icon-32.png")
