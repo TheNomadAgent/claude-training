@@ -153,7 +153,7 @@ SESSION = {
         ]},
     ],
     "deck": [
-        {"t": "title", "h": "Integration and stakeholder value", "sub": "Session 19 of 32. Workflow integration and solution design.", "notes": "Last one in this domain. It is the one for anyone who has to pitch an AI idea upward."},
+        {"t": "title", "h": "Integration and stakeholder value", "sub": "Session 19 of 31. Workflow integration and solution design.", "notes": "Last one in this domain. It is the one for anyone who has to pitch an AI idea upward."},
         {"t": "cards", "h": "Two different changes", "cols": 2, "cards": [
             ("Augmentation", "Claude helps inside the existing process. Same steps, same owners, same approvals."),
             ("Redesign", "The process itself changes. Where work starts and who sees it first may move."),

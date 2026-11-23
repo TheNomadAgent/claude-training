@@ -175,7 +175,7 @@ SESSION = {
         },
     ],
     "deck": [
-        {"t": "title", "h": "Building effective prompts", "sub": "Session 1 of 32. Prompting and task execution.",
+        {"t": "title", "h": "Building effective prompts", "sub": "Session 1 of 31. Prompting and task execution.",
          "notes": "Set expectations: 20 minutes of slides, then five questions on their phones. Everything today is in section 1 of the handout."},
         {"t": "big", "h": "A prompt is a work order.", "p": "Claude does the job described, with the facts supplied. Whatever you leave out, it fills with something that sounds reasonable.",
          "notes": "Ask who has had Claude or Copilot confidently tell them something wrong. That is nearly always a missing-input problem, not a model problem."},

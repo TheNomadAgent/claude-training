@@ -162,7 +162,7 @@ SESSION = {
         ]},
     ],
     "deck": [
-        {"t": "title", "h": "Recognising bias", "sub": "Session 8 of 32. Output evaluation and validation.", "notes": "This one is less technical. It still gets exam questions, usually in a hiring or people scenario."},
+        {"t": "title", "h": "Recognising bias", "sub": "Session 8 of 31. Output evaluation and validation.", "notes": "This one is less technical. It still gets exam questions, usually in a hiring or people scenario."},
         {"t": "big", "h": "Neutral wording is not neutral reasoning.", "p": "A response can sound balanced and still assume who is qualified and whose experience counts.", "notes": "Ask where they have seen a 'culture fit' type criterion that really meant something else."},
         {"t": "list", "h": "Where bias gets in", "items": [
             ("The request", "Success defined by irrelevant preferences."),

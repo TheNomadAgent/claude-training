@@ -168,7 +168,7 @@ SESSION = {
         ]},
     ],
     "deck": [
-        {"t": "title", "h": "Requirements and use cases", "sub": "Session 15 of 32. Workflow integration and solution design.", "notes": "New domain, 16% of the exam. This is the one most relevant to leads and anyone asked 'can we use AI for this?'"},
+        {"t": "title", "h": "Requirements and use cases", "sub": "Session 15 of 31. Workflow integration and solution design.", "notes": "New domain, 16% of the exam. This is the one most relevant to leads and anyone asked 'can we use AI for this?'"},
         {"t": "big", "h": "Start with the need, not the tool.", "p": "\"Automate approvals\" is a solution somebody wants. It is not the problem.", "notes": "Ask what the real need behind 'automate change approvals' might be. Get three different answers."},
         {"t": "cards", "h": "Eight things to write down first", "cols": 2, "cards": [
             ("Objective and users", "The result wanted, and who touches it."),

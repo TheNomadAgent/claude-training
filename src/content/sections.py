@@ -6,7 +6,6 @@ DOMAINS = [
     ("Configuration and knowledge management", 12),
     ("Governance, risk and responsible use", 15),
     ("Troubleshooting and optimisation", 10),
-    ("Exam preparation", 0),
 ]
 
 # (domain index, title)
@@ -42,5 +41,4 @@ SECTIONS = [
     (6, "Diagnosing underperforming prompts and poor outputs"),
     (6, "Improving solutions through feedback and controlled testing"),
     (6, "Optimising workflows for efficiency and effectiveness"),
-    (7, "Preparing for the exam"),
 ]

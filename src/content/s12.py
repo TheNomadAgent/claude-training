@@ -102,7 +102,7 @@ SESSION = {
         ]},
     ],
     "deck": [
-        {"t": "title", "h": "Haiku, Sonnet and Opus", "sub": "Session 12 of 32. Product and model selection.", "notes": "Frame it as sizing: you would not put a file server on the biggest host in the cluster by default."},
+        {"t": "title", "h": "Haiku, Sonnet and Opus", "sub": "Session 12 of 31. Product and model selection.", "notes": "Frame it as sizing: you would not put a file server on the biggest host in the cluster by default."},
         {"t": "big", "h": "The model does the work. The feature organises it.", "p": "A good Project cannot fix an unsuitable model, and a strong model still needs clear instructions.", "notes": "The exam checks they know these are separate choices."},
         {"t": "cards", "h": "Three families, three positions", "cols": 3, "cards": [
             ("Haiku", "Speed and economy. Clear, high-volume work with a format that is easy to check."),

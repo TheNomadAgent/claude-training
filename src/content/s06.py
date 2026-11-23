@@ -147,7 +147,7 @@ SESSION = {
         ]},
     ],
     "deck": [
-        {"t": "title", "h": "Detecting hallucinations", "sub": "Session 6 of 32. Output evaluation and validation.", "notes": "This domain is 21% of the exam, the biggest one. Today is the skill most of them already half-do: spotting what Claude made up."},
+        {"t": "title", "h": "Detecting hallucinations", "sub": "Session 6 of 31. Output evaluation and validation.", "notes": "This domain is 21% of the exam, the biggest one. Today is the skill most of them already half-do: spotting what Claude made up."},
         {"t": "big", "h": "Specificity requires specific evidence.", "p": "A clause number, a deadline, a penalty and a reason are four separate claims. Each one needs its own support.", "notes": "The risk is that most of the summary is right, so the invented parts ride along."},
         {"t": "list", "h": "Details that sound checked and often are not", "items": [
             ("Citations and clause numbers", "Does it lead to that text?"),

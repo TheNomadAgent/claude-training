@@ -154,7 +154,7 @@ SESSION = {
         },
     ],
     "deck": [
-        {"t": "title", "h": "Decomposing complex tasks", "sub": "Session 2 of 32. Prompting and task execution.",
+        {"t": "title", "h": "Decomposing complex tasks", "sub": "Session 2 of 31. Prompting and task execution.",
          "notes": "Last session was about one prompt done well. Today is about knowing when one prompt is the wrong tool."},
         {"t": "big", "h": "Later work should build on checked results, not guesses.", "p": "An early mistake does not stay small. Every stage after it treats it as fact.",
          "notes": "Relate it to a change plan: nobody runs step 6 before confirming step 2 worked."},

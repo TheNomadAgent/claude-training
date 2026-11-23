@@ -180,7 +180,7 @@ SESSION = {
         ]},
     ],
     "deck": [
-        {"t": "title", "h": "Research and planning", "sub": "Session 16 of 32. Workflow integration and solution design.", "notes": "Useful for anyone who writes options papers or gets asked 'which one should we go with?'"},
+        {"t": "title", "h": "Research and planning", "sub": "Session 16 of 31. Workflow integration and solution design.", "notes": "Useful for anyone who writes options papers or gets asked 'which one should we go with?'"},
         {"t": "big", "h": "Organise the uncertainty. Do not hide it.", "p": "Claude is good at structuring an investigation. It should not turn open questions into settled ones.", "notes": "Ask who has seen an options paper where the cheapest vendor quote was treated as the budget."},
         {"t": "cards", "h": "Design the research first", "cols": 2, "cards": [
             ("Research questions", "What has to be learned."),

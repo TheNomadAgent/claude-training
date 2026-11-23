@@ -195,7 +195,7 @@ def main():
 
     manifest = {
         "name": "Claude Foundations training", "short_name": "Foundations",
-        "description": "32 short sessions with practice questions for the CCAO-F exam.",
+        "description": "31 short sessions with practice questions for the CCAO-F exam.",
         "start_url": "./", "scope": "./", "display": "standalone", "orientation": "any",
         "background_color": "#0A162B", "theme_color": "#0A162B",
         "icons": [

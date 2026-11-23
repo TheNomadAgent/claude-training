@@ -138,7 +138,7 @@ SESSION = {
         ]},
     ],
     "deck": [
-        {"t": "title", "h": "Chat, Projects, Research, Artifacts", "sub": "Session 11 of 32. Product and model selection.", "notes": "New domain: 12% of the exam. Say up front that Copilot and other tools have equivalents, and the exam uses Claude's names."},
+        {"t": "title", "h": "Chat, Projects, Research, Artifacts", "sub": "Session 11 of 31. Product and model selection.", "notes": "New domain: 12% of the exam. Say up front that Copilot and other tools have equivalents, and the exam uses Claude's names."},
         {"t": "big", "h": "Use the smallest experience that does the job.", "p": "These are not a ladder from basic to advanced. Each solves a different problem.", "notes": "Default mistake is reaching for the biggest feature."},
         {"t": "cards", "h": "What each one is for", "cols": 2, "cards": [
             ("Chat", "Direct work. Everything needed fits in the conversation."),

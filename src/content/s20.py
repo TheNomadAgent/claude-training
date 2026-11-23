@@ -126,7 +126,7 @@ SESSION = {
         ]},
     ],
     "deck": [
-        {"t": "title", "h": "Configuring a Project", "sub": "Session 20 of 32. Configuration and knowledge management.", "notes": "New domain, 12% of the exam. Session 11 covered when to use a Project. This is how to set one up properly."},
+        {"t": "title", "h": "Configuring a Project", "sub": "Session 20 of 31. Configuration and knowledge management.", "notes": "New domain, 12% of the exam. Session 11 covered when to use a Project. This is how to set one up properly."},
         {"t": "big", "h": "Lasting guidance in the Project. The immediate job in the chat.", "p": "Getting that split right is most of the work.", "notes": "Everything else today is detail on this one sentence."},
         {"t": "cards", "h": "Define the boundary first", "cols": 3, "cards": [
             ("Purpose", "Draft planned maintenance notices."),

@@ -146,7 +146,7 @@ SESSION = {
         ]},
     ],
     "deck": [
-        {"t": "title", "h": "Maintaining configurations", "sub": "Session 24 of 32. Configuration and knowledge management.", "notes": "Last session in this domain. Treat a Project like any other config item: it has an owner, a version and a review date."},
+        {"t": "title", "h": "Maintaining configurations", "sub": "Session 24 of 31. Configuration and knowledge management.", "notes": "Last session in this domain. Treat a Project like any other config item: it has an owner, a version and a review date."},
         {"t": "big", "h": "Nobody broke it. The standards moved and the Project did not.", "p": "Stale configuration gives confident answers that used to be right.", "notes": "Same as an out-of-date runbook, except this one answers back fluently."},
         {"t": "compare", "h": "What the Project still says, and what is true now",
          "left_label": "In the Project, from 15 January", "left": "Standard build: 2 vCPU, 8 GB\nPremium build: 4 vCPU, 16 GB\nRequests valid for 30 days\nTeam leads approve up to 8 vCPU",

@@ -146,7 +146,7 @@ SESSION = {
         ]},
     ],
     "deck": [
-        {"t": "title", "h": "Optimising workflows", "sub": "Session 31 of 32. Troubleshooting and optimisation.", "notes": "Last content session. It pulls together Projects, model choice, templates, handoffs and review."},
+        {"t": "title", "h": "Optimising workflows", "sub": "Session 31 of 31. Troubleshooting and optimisation.", "notes": "Last session of the programme. It pulls together Projects, model choice, templates, handoffs and review."},
         {"t": "cards", "h": "Two words the exam keeps apart", "cols": 2, "cards": [
             ("Effectiveness", "The output serves its purpose, is supported by evidence and gets the review it needs."),
             ("Efficiency", "Getting there with less unnecessary time, cost, duplication and effort."),

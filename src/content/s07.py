@@ -134,7 +134,7 @@ SESSION = {
         ]},
     ],
     "deck": [
-        {"t": "title", "h": "Finding inconsistencies", "sub": "Session 7 of 32. Output evaluation and validation.", "notes": "Last session was claims that are not in the source. Today: claims that are in the source and got scrambled on the way through."},
+        {"t": "title", "h": "Finding inconsistencies", "sub": "Session 7 of 31. Output evaluation and validation.", "notes": "Last session was claims that are not in the source. Today: claims that are in the source and got scrambled on the way through."},
         {"t": "big", "h": "Each sentence can be fine while the whole is wrong.", "p": "Readers act on the last line. They rarely re-check the middle.", "notes": "Think of a change record where the rollback step refers to a server name that is not in the implementation steps."},
         {"t": "code", "h": "The source sheet", "label": "Monitoring licence comparison", "pre": SHEET, "notes": "Point at the definition. 80 licences cover 120 servers under option B because a host licence covers its VMs."},
         {"t": "spot", "h": "Find five defects", "reveal_label": "Five defects:",

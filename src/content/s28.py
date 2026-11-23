@@ -128,7 +128,7 @@ SESSION = {
         ]},
     ],
     "deck": [
-        {"t": "title", "h": "Ethics, fairness and accountability", "sub": "Session 28 of 32. Governance and responsible use.", "notes": "Last governance session. The scenario is deliberately close to home: who gets the cert budget."},
+        {"t": "title", "h": "Ethics, fairness and accountability", "sub": "Session 28 of 31. Governance and responsible use.", "notes": "Last governance session. The scenario is deliberately close to home: who gets the cert budget."},
         {"t": "big", "h": "AI can support judgement. People make the decision and stand behind it.", "p": "Following the rules is necessary. It is not the whole test.", "notes": "A process can be compliant and still unfair, inaccessible or impossible to challenge."},
         {"t": "code", "h": "The panel's first idea", "label": "Proposed prompt", "pre": BAD, "notes": "Ask the room what is wrong before moving on. Every input here is a proxy."},
         {"t": "list", "h": "What those inputs really measure", "items": [

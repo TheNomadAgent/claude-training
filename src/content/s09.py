@@ -145,7 +145,7 @@ SESSION = {
         ]},
     ],
     "deck": [
-        {"t": "title", "h": "Fact-checking and sources", "sub": "Session 9 of 32. Output evaluation and validation.", "notes": "Sessions 6 and 7 were about one supplied source. Today there are several sources, and they do not all carry the same weight."},
+        {"t": "title", "h": "Fact-checking and sources", "sub": "Session 9 of 31. Output evaluation and validation.", "notes": "Sessions 6 and 7 were about one supplied source. Today there are several sources, and they do not all carry the same weight."},
         {"t": "big", "h": "You check claims, not documents.", "p": "A source only helps when it supports the exact claim, conditions included.", "notes": "Everyone has been burned by an 'up to' figure on a datasheet."},
         {"t": "cards", "h": "Four kinds of statement", "cols": 2, "cards": [
             ("Factual claim", "\"The unit is 3 kVA.\" Test it."),
