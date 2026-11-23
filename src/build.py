@@ -76,7 +76,7 @@ def body_html(blocks):
             out.append("<ul>%s</ul>" % "".join("<li>%s</li>" % inline(x) for x in b[1]))
         elif k == "table":
             head = "".join("<th>%s</th>" % inline(x) for x in b[1])
-            rows = "".join("<tr>%s</tr>" % "".join("<td>%s</td>" % inline(c) for c in r) for r in b[2])
+            rows = "".join("<tr>%s</tr>" % "".join('<td data-l="%s">%s</td>' % (html.escape(b[1][i], quote=True), inline(c)) for i, c in enumerate(r)) for r in b[2])
             out.append('<div class="tw"><table><thead><tr>%s</tr></thead><tbody>%s</tbody></table></div>' % (head, rows))
         else:
             raise SystemExit("Unknown block type: " + k)
@@ -118,10 +118,12 @@ def slide_html(s, sess, logo_big):
     elif t == "spot":
         inner = ('<h2>%s</h2><div class="two even" data-lit><div class="pane"><div class="lb">%s</div><pre>%s</pre></div>'
                  '<div class="pane bad"><div class="lb">%s</div><pre>%s</pre></div></div>'
-                 '<div class="reveal fr"><b>Not in the record:</b>%s</div>') % (
-                     h, esc(s["left_label"]), pre(s["left"]), esc(s["right_label"]), pre(s["right"], True), esc(s["reveal"]))
+                 '<div class="reveal fr"><b>%s</b>%s</div>') % (
+                     h, esc(s["left_label"]), pre(s["left"]), esc(s["right_label"]), pre(s["right"], True),
+                     esc(s.get("reveal_label", "Not in the source:")), esc(s["reveal"]))
     elif t == "code":
-        inner = '<h2>%s</h2><div class="pane ask single"><div class="lb">%s</div><pre>%s</pre></div>' % (h, esc(s["label"]), pre(s["pre"]))
+        small = " small" if s["pre"].count("\n") >= 14 else ""
+        inner = '<h2>%s</h2><div class="pane ask single%s"><div class="lb">%s</div><pre>%s</pre></div>' % (h, small, esc(s["label"]), pre(s["pre"]))
     elif t == "ask":
         block = '<div class="pane"><pre>%s</pre></div>' % pre(s["pre"]) if s.get("pre") else ""
         inner = '<h2>%s</h2>%s<div class="reveal fr"><b>Answer:</b>%s</div>' % (h, block, esc(s["answer"]))

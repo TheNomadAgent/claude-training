@@ -276,6 +276,14 @@ td:first-child{font-weight:650}
   .q{padding:16px 14px}
   figure pre{font-size:13px;padding:14px}
   .pop{position:fixed;left:12px!important;right:12px;top:auto!important;bottom:calc(12px + env(safe-area-inset-bottom));width:auto;padding:18px 18px 20px;border-radius:18px}
+  .tw{border:0;overflow:visible}
+  .tw table{min-width:0;display:block}
+  .tw thead{display:none}
+  .tw tbody{display:grid;gap:10px}
+  .tw tr{display:block;border:1px solid var(--line);border-radius:12px;background:var(--ink2);padding:6px 0}
+  .tw td{display:block;border:0;padding:7px 14px}
+  .tw td::before{content:attr(data-l);display:block;font-size:12.5px;font-weight:650;color:var(--dim);margin-bottom:1px}
+  .tw td[data-l=""]::before{display:none}
   .strip{flex-wrap:nowrap;overflow-x:auto;margin:0 -18px 18px;padding:4px 18px 8px;scrollbar-width:none}
   .strip::-webkit-scrollbar{display:none}
   .strip li{flex:none}
