@@ -126,7 +126,7 @@ SESSION = {
         ]},
     ],
     "deck": [
-        {"t": "title", "h": "Diagnosing poor outputs", "sub": "Session 29 of 31. Troubleshooting and optimisation.", "notes": "Final content domain, 10% of the exam. This is the session your team already knows how to do. It is fault-finding."},
+        {"t": "title", "h": "Diagnosing poor outputs", "sub": "Session 29 of 32. Troubleshooting and optimisation.", "notes": "Final content domain, 10% of the exam. This is the session your team already knows how to do. It is fault-finding."},
         {"t": "big", "h": "Reproduce. Isolate. Change one thing. Retest.", "p": "The same discipline you would use on a server. Do not rewrite the whole prompt.", "notes": "Nobody here rebuilds a server because one service will not start."},
         {"t": "ask", "h": "How long are daily backups of production servers retained?",
          "pre": "Backup Operations Standard, effective 1 April 2026: 35 days\nBackup Procedure, revised 15 June 2024: 30 days\nBackup team note, 8 April 2026: \"keeping dailies for 42 days lately\"",

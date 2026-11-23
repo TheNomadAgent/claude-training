@@ -165,7 +165,7 @@ SESSION = {
         ]},
     ],
     "deck": [
-        {"t": "title", "h": "Accuracy and completeness", "sub": "Session 5 of 31. Evaluating outputs.", "notes": "New domain: output evaluation, 21% of the exam, the biggest one. Six sessions."},
+        {"t": "title", "h": "Accuracy and completeness", "sub": "Session 5 of 32. Evaluating outputs.", "notes": "New domain: output evaluation, 21% of the exam, the biggest one. Six sessions."},
         {"t": "big", "h": "Fluency is not evidence.", "p": "Good headings and a confident tone describe the presentation. They do not tell you it is right or complete.", "notes": "Start from the source and the request, not from how the writing feels."},
         {"t": "cards", "h": "Six separate checks", "cols": 3, "cards": [
             ("Accuracy", "Does each claim match the evidence?"),

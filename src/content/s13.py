@@ -128,7 +128,7 @@ SESSION = {
         ]},
     ],
     "deck": [
-        {"t": "title", "h": "Quality, speed and cost", "sub": "Session 13 of 31. Product and model selection.", "notes": "Session 12 was which family. Today is how you prove the choice with numbers."},
+        {"t": "title", "h": "Quality, speed and cost", "sub": "Session 13 of 32. Product and model selection.", "notes": "Session 12 was which family. Today is how you prove the choice with numbers."},
         {"t": "big", "h": "There is no best model.", "p": "There is the cheapest approach that reliably meets what this service needs.", "notes": "Ask who has chosen a tool because a demo looked good."},
         {"t": "cards", "h": "Define the service requirement first", "cols": 2, "cards": [
             ("Quality", "What must the output get right?"),

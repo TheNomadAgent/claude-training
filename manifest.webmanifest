@@ -1,7 +1,7 @@
 {
   "name": "Claude Foundations training",
   "short_name": "Foundations",
-  "description": "31 short sessions with practice questions for the CCAO-F exam.",
+  "description": "32 short sessions with practice questions for the CCAO-F exam.",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",

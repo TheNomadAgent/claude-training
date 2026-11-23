@@ -134,7 +134,7 @@ SESSION = {
         ]},
     ],
     "deck": [
-        {"t": "title", "h": "Process improvements", "sub": "Session 17 of 31. Workflow integration and solution design.", "notes": "ITIL people will recognise most of this. The AI-specific point is the order: fix the inputs before adding the tool."},
+        {"t": "title", "h": "Process improvements", "sub": "Session 17 of 32. Workflow integration and solution design.", "notes": "ITIL people will recognise most of this. The AI-specific point is the order: fix the inputs before adding the tool."},
         {"t": "big", "h": "AI on a messy process gives you a faster messy process.", "p": "Standardise the work before deciding what to assist or automate.", "notes": "Ask for a process where they think AI would just speed up the mess."},
         {"t": "steps", "h": "Map what happens today", "steps": ["Trigger", "Intake", "Work", "Handoffs", "Waiting", "Exceptions", "Outcome"], "notes": "Current state, not ideal state. Record facts, not blame."},
         {"t": "list", "h": "Friction and rework in the weekly report", "items": [

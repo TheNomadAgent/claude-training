@@ -174,7 +174,7 @@ SESSION = {
         ]},
     ],
     "deck": [
-        {"t": "title", "h": "AI policies and governance", "sub": "Session 27 of 31. Governance and responsible use.", "notes": "Scenario-based session. The exam likes 'a senior person asks you to...' questions."},
+        {"t": "title", "h": "AI policies and governance", "sub": "Session 27 of 32. Governance and responsible use.", "notes": "Scenario-based session. The exam likes 'a senior person asks you to...' questions."},
         {"t": "big", "h": "Capability is not permission.", "p": "The tool accepting a document says nothing about whether you may give it one.", "notes": "Permission comes from: approved tool and account, data classification, stated purpose, required review."},
         {"t": "code", "h": "The message you get at 4 pm", "label": "From a senior colleague", "pre": REQUEST, "notes": "Ask the room: how many things are wrong with this? Do not reveal yet."},
         {"t": "list", "h": "Three controls broken", "items": [

@@ -120,7 +120,7 @@ SESSION = {
         ]},
     ],
     "deck": [
-        {"t": "title", "h": "Data sensitivity and privacy", "sub": "Session 26 of 31. Governance and responsible use.", "notes": "Practical one. Everyone here has pasted a log or an export somewhere they should not have."},
+        {"t": "title", "h": "Data sensitivity and privacy", "sub": "Session 26 of 32. Governance and responsible use.", "notes": "Practical one. Everyone here has pasted a log or an export somewhere they should not have."},
         {"t": "big", "h": "Least data necessary, in a workspace approved for it.", "p": "Classify before you share. Being asked for an analysis is not permission.", "notes": "Three checks: category, classification, permitted purpose."},
         {"t": "list", "h": "The ticket export, field by field", "items": [
             ("Requester name and email", "Direct identifiers. Remove."),

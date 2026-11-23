@@ -154,7 +154,7 @@ SESSION = {
         ]},
     ],
     "deck": [
-        {"t": "title", "h": "Managing uploaded knowledge", "sub": "Session 22 of 31. Configuration and knowledge management.", "notes": "Think SharePoint: everyone has seen a folder with final, final2 and FINAL-use-this."},
+        {"t": "title", "h": "Managing uploaded knowledge", "sub": "Session 22 of 32. Configuration and knowledge management.", "notes": "Think SharePoint: everyone has seen a folder with final, final2 and FINAL-use-this."},
         {"t": "big", "h": "Curate, do not accumulate.", "p": "Five documents that agree beat fifty that argue with each other.", "notes": "Retrieval finds relevant text. It does not decide which document is the authority."},
         {"t": "ask", "h": "How many of these six should stay?",
          "pre": "1. Patching Standard v4.1, approved and current: 14 days\n2. Patching Standard v3.2, obsolete: 30 days\n3. Patching Standard v4.2, unsigned draft: 7 days\n4. v4.1 copy.docx\n5. v4.1 copy.pdf\n6. Discussion notes: 7 days was suggested",

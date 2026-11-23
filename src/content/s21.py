@@ -166,7 +166,7 @@ SESSION = {
         ]},
     ],
     "deck": [
-        {"t": "title", "h": "Writing Project instructions", "sub": "Session 21 of 31. Configuration and knowledge management.", "notes": "Session 1 was writing one good prompt. This is writing the rules that sit behind every prompt in a Project."},
+        {"t": "title", "h": "Writing Project instructions", "sub": "Session 21 of 32. Configuration and knowledge management.", "notes": "Session 1 was writing one good prompt. This is writing the rules that sit behind every prompt in a Project."},
         {"t": "compare", "h": "A wish and a rule",
          "left_label": "A wish", "left": "Give accurate, helpful answers about remote access.\nUse the documents and be clear.",
          "right_label": "A rule", "right": "Treat the approved standard as the authority.\nIdentify the draft as a draft if it is mentioned.\nWhen sources disagree, follow the approved standard.\nCite the document and section for every requirement.",

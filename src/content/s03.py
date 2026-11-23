@@ -170,7 +170,7 @@ SESSION = {
         },
     ],
     "deck": [
-        {"t": "title", "h": "Iterating prompts", "sub": "Session 3 of 31. Prompting and task execution.",
+        {"t": "title", "h": "Iterating prompts", "sub": "Session 3 of 32. Prompting and task execution.",
          "notes": "Recap: session 1 was building the prompt, session 2 was splitting the job. Today is what you do when the first answer is nearly right."},
         {"t": "big", "h": "Diagnose the output before you touch the prompt.", "p": "The first response is a draft to inspect. It is not a verdict on the task.",
          "notes": "Same instinct as troubleshooting: do not change three things at once and hope."},

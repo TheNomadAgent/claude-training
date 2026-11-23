@@ -142,7 +142,7 @@ SESSION = {
         ]},
     ],
     "deck": [
-        {"t": "title", "h": "Appropriate and inappropriate uses", "sub": "Session 25 of 31. Governance and responsible use.", "notes": "New domain: governance, 15% of the exam. Four sessions."},
+        {"t": "title", "h": "Appropriate and inappropriate uses", "sub": "Session 25 of 32. Governance and responsible use.", "notes": "New domain: governance, 15% of the exam. Four sessions."},
         {"t": "big", "h": "Support accountable work. Do not transfer accountability.", "p": "The question is what role Claude has, not whether it can do the task quickly.", "notes": "This sentence answers most governance questions on the exam."},
         {"t": "list", "h": "Seven things to weigh", "items": [
             ("Purpose", "What is the output for?"),

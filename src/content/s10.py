@@ -154,7 +154,7 @@ SESSION = {
         ]},
     ],
     "deck": [
-        {"t": "title", "h": "Human review, audience and format", "sub": "Session 10 of 31. Output evaluation and validation.", "notes": "Last session in the output evaluation domain. Three ideas today: how much review, who it is for, and what shape it takes."},
+        {"t": "title", "h": "Human review, audience and format", "sub": "Session 10 of 32. Output evaluation and validation.", "notes": "Last session in the output evaluation domain. Three ideas today: how much review, who it is for, and what shape it takes."},
         {"t": "big", "h": "Review follows consequence.", "p": "How much checking an output needs depends on what happens if it is wrong.", "notes": "Same logic as change risk: a standard change and a major change do not get the same scrutiny."},
         {"t": "list", "h": "What raises the level of review", "items": [
             ("Impact", "Who or what is affected if it is wrong?"),

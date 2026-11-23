@@ -149,7 +149,7 @@ SESSION = {
         ]},
     ],
     "deck": [
-        {"t": "title", "h": "Designing a solution", "sub": "Session 18 of 31. Workflow integration and solution design.", "notes": "This is the build session of the domain. The example is alert triage, which should feel familiar."},
+        {"t": "title", "h": "Designing a solution", "sub": "Session 18 of 32. Workflow integration and solution design.", "notes": "This is the build session of the domain. The example is alert triage, which should feel familiar."},
         {"t": "big", "h": "Automate preparation and routing first.", "p": "Not accountable judgement. A first design is a pilot built to learn.", "notes": "Ask what the smallest useful version of an AI helper in their queue would be."},
         {"t": "cards", "h": "A boundary names four things", "cols": 2, "cards": [
             ("The input", "Exported alert records only."),

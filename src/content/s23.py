@@ -152,7 +152,7 @@ SESSION = {
         ]},
     ],
     "deck": [
-        {"t": "title", "h": "Connectors and permissions", "sub": "Session 23 of 31. Configuration and knowledge management.", "notes": "Copilot's equivalent is its access to SharePoint, mail and Teams. Same principles apply."},
+        {"t": "title", "h": "Connectors and permissions", "sub": "Session 23 of 32. Configuration and knowledge management.", "notes": "Copilot's equivalent is its access to SharePoint, mail and Teams. Same principles apply."},
         {"t": "cards", "h": "Two ways to give Claude a source", "cols": 2, "cards": [
             ("Upload", "A fixed snapshot. Right when an approved reference must not change during the task."),
             ("Connector", "The current record in its home system. Right when it changes often or the live record is the authority."),

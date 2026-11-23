@@ -214,7 +214,6 @@ function frame(){
   if(!RM||Math.abs(spin-ang)>.002)requestAnimationFrame(frame);
 }
 addEventListener('resize',function(){size();if(RM)frame()});
-addEventListener('mousemove',function(e){mx=e.clientX/innerWidth-.5;my=e.clientY/innerHeight-.5});
 size();seed();
 var h=parseInt(location.hash.slice(1),10);if(h>=1&&h<=slides.length)i=h-1;
 slides.forEach(function(s,k){setFr(s,k<i?frs(s).length:0)});

@@ -178,7 +178,7 @@ SESSION = {
         ]},
     ],
     "deck": [
-        {"t": "title", "h": "Feedback and controlled testing", "sub": "Session 30 of 31. Troubleshooting and optimisation.", "notes": "Session 29 was diagnosing one bad output. This is improving a workflow without breaking what already works."},
+        {"t": "title", "h": "Feedback and controlled testing", "sub": "Session 30 of 32. Troubleshooting and optimisation.", "notes": "Session 29 was diagnosing one bad output. This is improving a workflow without breaking what already works."},
         {"t": "big", "h": "Feedback is evidence, not a revision request.", "p": "\"Not useful\" tells you something is wrong. It does not tell you what to change.", "notes": "Before touching anything, capture: input, output, expected, defect, impact, frequency."},
         {"t": "cards", "h": "Four kinds of feedback", "cols": 2, "cards": [
             ("Factual defect", "Conflicts with the source."),

@@ -212,7 +212,7 @@ SESSION = {
         },
     ],
     "deck": [
-        {"t": "title", "h": "Adapting prompts to the job", "sub": "Session 4 of 31. Prompting and task execution.",
+        {"t": "title", "h": "Adapting prompts to the job", "sub": "Session 4 of 32. Prompting and task execution.",
          "notes": "Last one in the prompting domain. After today they have the whole 14% of the exam that covers prompting."},
         {"t": "big", "h": "Same facts. Four different jobs.", "p": "Analysis, research, drafting and brainstorming need different instructions, and each is judged differently.",
          "notes": "Most poor prompts name a topic and never say which of these four they want."},

@@ -154,7 +154,7 @@ SESSION = {
         ]},
     ],
     "deck": [
-        {"t": "title", "h": "Context, memory and boundaries", "sub": "Session 14 of 31. Product and model selection.", "notes": "Everyone has had a chat go strange after forty turns. Today explains why and what to do."},
+        {"t": "title", "h": "Context, memory and boundaries", "sub": "Session 14 of 32. Product and model selection.", "notes": "Everyone has had a chat go strange after forty turns. Today explains why and what to do."},
         {"t": "big", "h": "A long conversation is not a better conversation.", "p": "Old drafts and replaced instructions stay in view and keep pulling on the answer.", "notes": "Links back to session 3: context drift."},
         {"t": "list", "h": "Signs the context needs attention", "items": [
             ("Dropped constraints", "A rule you set earlier stops being applied."),
