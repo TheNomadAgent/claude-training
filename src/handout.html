@@ -577,7 +577,7 @@ function lab(id){
   var h='<article class="wrap lab"><p class="crumb"><b>Lab '+pad(id)+'</b>'+esc(b.kind)+', about '+b.minutes+' minutes</p><h1 class="t">'+esc(b.title)+'</h1>'+
     '<div class="acts"><a class="btn" href="#/s/'+id+'">Back to session '+pad(id)+'</a>'+(st.done?'<span class="donepill">Lab done</span>':'')+'</div>'+
     '<div class="body">'+b.scenario+'</div>'+
-    '<div class="tip">Works in any Claude chat: claude.ai, CONVER or Claude in Copilot. Paste the files in. Use a new chat where a step says so. Everything here is invented. Do not add real customer data.</div>'+
+    '<div class="tip">Works in any Claude chat: claude.ai, CONVER or Claude in Copilot. Paste the files in or attach them. Use a new chat where a step says so. Everything here is invented. Do not add real customer data.</div>'+
     '<h2 class="h2">Lab pack</h2>';
   b.pack.forEach(function(f,i){
     h+='<figure class="doc file" data-f="'+i+'"><figcaption><span><b>'+esc(f.name)+'</b><small>'+f.cap+'</small></span><span class="fb"><button class="copy" data-copy="'+i+'">Copy</button><a class="copy" href="'+f.url+'" download="'+esc(f.name)+'">Download</a></span></figcaption><pre>'+esc(f.text)+'</pre></figure>'});

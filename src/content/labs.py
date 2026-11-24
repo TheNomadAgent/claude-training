@@ -246,7 +246,7 @@ LABS = {
     "minutes": 10,
     "scenario": [
         ("p", "Saturday's planned maintenance on Helios's Lyra RDS farm did not finish. Four session hosts were deferred because mission operators were still working through a launch window. The Helios service owner wants an update this morning."),
-        ("p", "You have the engineer's notes and a prompt somebody used last time. The prompt is bad. Your job is to make it good."),
+        ("p", "You have the engineer's notes and a one-line prompt somebody used last time. A strong model can sometimes rescue a prompt like that by guessing well. Your job is to write one that leaves nothing to guess."),
     ],
     "pack": [
         ("00-helios-profile.txt", "Customer profile. Skim it once. You will reuse it in later labs.", PROFILE),
@@ -254,9 +254,9 @@ LABS = {
     ],
     "start": ("The prompt somebody used last time", L1_START),
     "tasks": [
-        ("Run the bad prompt", "Paste the starting prompt and the patch notes into a new chat. Read what comes back and write down three things wrong with it for this reader."),
-        ("Rewrite the prompt", "In a **new** chat, write a prompt that states the audience, the purpose, the evidence boundary, the constraints from the customer profile, and the format."),
-        ("Run it and self-check", "Run your prompt with the same notes. Tick off the self-check list below against the output."),
+        ("Run the one-line prompt", "In a new chat, paste the starting prompt and **only** `01-patch-notes.txt`. Leave the customer profile out. Write down what Claude had to guess: the reader, the length, what to leave out. Did the ticket number or the engineer's name get through?"),
+        ("Rewrite the prompt", "In a **new** chat, write a prompt that states the audience, the purpose, the evidence boundary, the constraints from the customer profile, the format and a word limit. Read the profile for the rules. Paste both files this time."),
+        ("Run it and self-check", "Tick off the self-check list below against the output. Count the words. Do not trust a feeling that it is short enough."),
         ("Get a second opinion", "Copy the grader prompt, paste your output where it says to, and run it. Did the grader agree with your own ticks?"),
     ],
     "checks": [
@@ -265,12 +265,13 @@ LABS = {
         "It gives the reason the notes give (operators still had active sessions during a launch window) and no other cause.",
         "It contains no internal ticket number and no engineer name.",
         "It does not promise the four hosts will be done on the 18th. It says they are scheduled.",
-        "It is written for a non-technical reader and is 120 words or fewer.",
+        "It is 120 words or fewer, not counting headings.",
+        "It says nothing about the state of the four deferred hosts beyond what the notes say: they stay on last month's patch level.",
     ],
     "reveal": ("One prompt that works", L1_REVEAL),
     "debrief": [
-        "What was in the first output that the notes never said?",
-        "Which single line in your prompt made the biggest difference?",
+        "What did the one-line prompt make Claude guess, and would it guess the same way for a colleague tomorrow?",
+        "Which single line in your prompt made the biggest difference to the result?",
     ],
 },
 2: {
@@ -288,7 +289,7 @@ LABS = {
     ],
     "start": ("The one-shot prompt", L2_START),
     "tasks": [
-        ("Run the one-shot prompt", "Paste the starting prompt and all three files into a new chat. Find the incident total it reports. What did it do about Vega?"),
+        ("Run the one-shot prompt", "Paste the starting prompt and all three files into a new chat. Find the incident total it reports. What did it do about Vega? Could you check any of its totals without redoing the sums yourself?"),
         ("Step 1: extract", "In a new chat, ask only for a table of the figures, with \"not supplied\" where a value is missing. Check every cell against the files before you go on."),
         ("Step 2: compare", "Ask for the totals that can be calculated, and which sites each total covers."),
         ("Step 3: draft and self-check", "Ask for the summary, using only the table and the comparison. Tick off the self-check list."),
@@ -303,7 +304,7 @@ LABS = {
     ],
     "reveal": ("Three prompts and what a good result says", L2_REVEAL),
     "debrief": [
-        "Did the one-shot prompt report Vega as zero incidents, or leave it out without saying?",
+        "What did the one-shot prompt do with Vega's missing incidents? Would you bet on it doing that every time?",
         "At which step would you have caught a wrong number, and what would it have cost to catch it at the end?",
     ],
 },
@@ -378,8 +379,6 @@ def grader(lab):
     lines = ["You are marking a short training exercise. Be strict and brief.", "",
              "SOURCE MATERIAL"]
     for name, _cap, text in lab["pack"]:
-        if name.startswith("00-"):
-            continue
         lines += ["--- " + name + " ---", text, ""]
     lines += ["CHECKLIST"]
     for i, c in enumerate(lab["checks"], 1):
@@ -390,5 +389,6 @@ def grader(lab):
               "",
               "For each numbered check, answer Met, Not met or Cannot tell, and quote the words from my work that",
               "you based it on. If my work states anything that is not in the source material, list it at the end",
-              "under \"Not in the source\". Do not rewrite my work and do not give a score."]
+              "under \"Not in the source\". Anything in any of the files above counts as source material.",
+              "Do not rewrite my work and do not give a score."]
     return "\n".join(lines)
