@@ -1,0 +1,10 @@
+BRIEF FOR THE DR TEST SUMMARY
+
+For: Helios service owner.
+Must include:
+1. The date of the test.
+2. Every system tested.
+3. The recovery time target AND the time achieved for each system.
+4. Any system that missed its target.
+5. Every follow-up action, with its owner and due date.
+Use only the DR test record.

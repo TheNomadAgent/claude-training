@@ -1,0 +1,17 @@
+===== 01-ticket-export.txt =====
+TICKET EXPORT - INVENTED DATA FOR TRAINING
+
+ID | Requester email            | Office | Job title        | Start  | Opened | Category         | Channel | Notes
+1  | a.reid@helios.example      | CAS    | Payroll Manager  | Mar 19 | Oct    | Password reset   | Phone   | -
+2  | b.tane@helios.example      | LYR    | Mission Operator | Jun 22 | Oct    | Password reset   | Phone   | temp pwd Orbit!2291 given
+3  | c.wu@helios.example        | LYR    | Mission Operator | Jan 24 | Oct    | Password reset   | Phone   | -
+4  | d.patel@helios.example     | VEG    | Ground Engineer  | Aug 21 | Oct    | Password reset   | Portal  | -
+5  | e.moana@helios.example     | CAS    | Finance Analyst  | Feb 20 | Oct    | Password reset   | Portal  | uses screen reader
+6  | f.kim@helios.example       | LYR    | Mission Operator | Sep 23 | Oct    | RD Gateway access| Portal  | -
+7  | g.silva@helios.example     | VEG    | Ground Engineer  | Nov 22 | Nov    | Password reset   | Phone   | -
+8  | h.jones@helios.example     | LYR    | Mission Operator | May 25 | Nov    | Password reset   | Phone   | -
+9  | i.ngata@helios.example     | LYR    | Shift Lead       | Apr 18 | Nov    | RD Gateway access| Portal  | -
+10 | j.brown@helios.example     | CAS    | Payroll Manager  | Mar 19 | Nov    | RD Gateway access| Portal  | -
+
+PURPOSE: show how ticket volume changed from October to
+November by category and channel. Nothing else.

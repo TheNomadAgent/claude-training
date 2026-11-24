@@ -1,0 +1,23 @@
+===== 01-notes-and-feedback.txt =====
+NOTES 1 - migration meeting, 14 May
+- The migration is 70% complete. Copy testing found orphaned
+  permission entries on the legacy shares. The team talked
+  through earlier clean-up work and why several share mappings
+  were originally chosen.
+- Decision: defer the firewall rule review until 28 May.
+- Action: prepare remediation options for the orphaned
+  permissions. Owner: storage lead. Due: 21 May.
+- Risk: if the remediation options are not approved by 21 May,
+  migration testing may run past the planned completion date.
+
+NOTES 2 - migration meeting, 21 May (incomplete)
+- Remediation options were presented.
+- Action: update the cutover runbook.
+- No decisions recorded.
+
+OLD PROMPT
+"Summarise these meeting notes clearly and thoroughly."
+
+FEEDBACK
+"Too much background." "It missed the firewall decision."
+"The action had no owner." 

@@ -1,0 +1,19 @@
+===== 01-pilot-results.txt =====
+SERVER ONBOARDING PILOT - RESULTS
+
+What changed: Claude drafts the onboarding checklist pack and
+the clarification questions for each new server. The onboarding
+coordinator reviews and sends them. The coordinator still
+approves every onboarding.
+
+Before (15 onboardings)
+Median time to complete: 6 business days.
+Clarification exchanges per onboarding: 5.
+
+During the pilot (6 onboardings)
+Median time to complete: 4 business days.
+Clarification exchanges per onboarding: 2.
+Two of the six needed manual handling because the server did
+not fit the standard checklist.
+
+Not measured: coordinator time spent reviewing drafts.

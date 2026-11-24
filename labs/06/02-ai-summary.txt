@@ -1,0 +1,10 @@
+BACKUP STANDARD - SUMMARY
+
+S1. Production servers are backed up every night.
+S2. Backups are kept for 35 days.
+S3. Tier-1 systems are restore tested every 90 days.
+S4. This is required by section 7.3 of the standard.
+S5. Results go in the backup register, so an auditor could
+    review them.
+S6. A failed backup is re-run within four hours.
+S7. The standard is owned by Mere Aroha in Platform Standards.

@@ -224,7 +224,7 @@ def main():
         deck = list(s["deck"])
         if n in LABS:
             lb = LABS[n]
-            deck.insert(len(deck) - 1, {"t": "steps", "h": "Lab: " + lb["title"].lower(),
+            deck.insert(len(deck) - 1, {"t": "steps", "h": "Lab: " + lb["title"],
                                         "steps": [re.sub(r"[*`]", "", t) for t, _ in lb["tasks"]],
                                         "notes": "Ten minutes, hands on. Everyone opens the handout, session %d, Start the lab. Debrief after: %s" % (n, " ".join(lb["debrief"]))})
         slides = "\n".join(slide_html(sl, s, logo_big) for sl in deck)

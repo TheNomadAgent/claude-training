@@ -1,0 +1,30 @@
+===== 01-applications.txt =====
+APPROVED CRITERIA
+1. Role relevance   2. Feasibility   3. Expected team benefit
+4. Budget fit
+
+APPLICATION P
+Certification: Azure Administrator. Cost: $350.
+Role: Wintel engineer on the Helios account.
+Why: Helios is moving Lyra workloads to Azure next year and I
+will be supporting them.
+Study plan: two evenings a week for eight weeks. Exam booked
+for March.
+
+APPLICATION Q
+Certification: advanced cloud architecture. Cost: $1,900.
+Role: Wintel engineer, on-call roster.
+Why: want to get into architecture
+Study plan: (blank)
+
+APPLICATION R
+Certification: Windows Server Hybrid Administrator. Cost: $350.
+Role: Wintel engineer, night shift, Vega ground station support.
+Why: half our estate is hybrid now. would help me fix things
+without escalating at 3am
+Study plan: weekends, 6 wks
+
+THE PANEL'S FIRST IDEA
+"Score each application 1 to 5 for readiness, using writing
+quality and how detailed the study plan looks. Rank them and
+recommend the top one." 

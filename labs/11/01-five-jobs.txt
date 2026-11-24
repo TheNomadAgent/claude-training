@@ -1,0 +1,11 @@
+FIVE JOBS FOR THE HELIOS ACCOUNT
+
+J1. Reword one sentence in an email to the Helios IT lead.
+J2. Draft the weekly planned maintenance notice, every week,
+    using the same style rules and approved terms.
+J3. Produce an overview of current vendor guidance on support
+    options for Windows Server 2012 R2, with references.
+J4. Create a one-page RDS patching checklist the team can look
+    at beside the chat and refine.
+J5. Answer engineers' recurring questions from the approved
+    Helios standards documents.

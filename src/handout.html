@@ -577,7 +577,7 @@ function lab(id){
   var h='<article class="wrap lab"><p class="crumb"><b>Lab '+pad(id)+'</b>'+esc(b.kind)+', about '+b.minutes+' minutes</p><h1 class="t">'+esc(b.title)+'</h1>'+
     '<div class="acts"><a class="btn" href="#/s/'+id+'">Back to session '+pad(id)+'</a>'+(st.done?'<span class="donepill">Lab done</span>':'')+'</div>'+
     '<div class="body">'+b.scenario+'</div>'+
-    '<div class="tip">Works in any Claude chat: claude.ai, CONVER or Claude in Copilot. Paste the files in or attach them. Use a new chat where a step says so. Everything here is invented. Do not add real customer data.</div>'+
+    '<div class="tip">Do the whole lab in <b>one chat</b>: claude.ai, CONVER or Claude in Copilot. Attach the files or paste them in. A clean chat with no saved instructions gives the fairest result. Everything here is invented. Do not add real customer data.</div>'+
     '<h2 class="h2">Lab pack</h2>';
   b.pack.forEach(function(f,i){
     h+='<figure class="doc file" data-f="'+i+'"><figcaption><span><b>'+esc(f.name)+'</b><small>'+f.cap+'</small></span><span class="fb"><button class="copy" data-copy="'+i+'">Copy</button><a class="copy" href="'+f.url+'" download="'+esc(f.name)+'">Download</a></span></figcaption><pre>'+esc(f.text)+'</pre></figure>'});
@@ -587,7 +587,7 @@ function lab(id){
     '<h2 class="h2">Self-check</h2><p class="mini">Tick each one you can point to in your own output. '+ticked+' of '+b.checks.length+' ticked.</p><div class="chks">';
   b.checks.forEach(function(t,i){var on=!!st.c[i];
     h+='<button class="opt chk'+(on?' sel':'')+'" role="checkbox" aria-checked="'+on+'" data-c="'+i+'"><span class="box" aria-hidden="true">'+(on?'&#10003;':'')+'</span><span>'+t+'</span></button>'});
-  h+='</div><h2 class="h2">Get it marked</h2><p>Copy this grader prompt into a new chat, paste your work where it says, and run it. Then compare its verdict with your own ticks. A grader can be wrong too, so check the words it quotes.</p>'+
+  h+='</div><h2 class="h2">Get it marked</h2><p>When you have finished the steps, send this as your <b>next message in the same chat</b>. It marks the work already in the conversation, so there is nothing to paste. Compare its verdict with your own ticks. Claude is marking its own work here, so check the words it quotes.</p>'+
     '<details class="fold"><summary>Show the grader prompt</summary><figure class="prompt" id="gradep"><figcaption><span>Grader prompt</span></figcaption><pre>'+esc(b.grader)+'</pre></figure></details>'+
     '<p><button class="btn" id="gcopy">Copy the grader prompt</button></p>'+
     '<h2 class="h2">Stuck, or finished?</h2><details class="fold"><summary>'+esc(b.reveal.cap)+'</summary><figure class="out good"><figcaption>'+esc(b.reveal.cap)+'</figcaption><pre>'+esc(b.reveal.text)+'</pre></figure></details>'+

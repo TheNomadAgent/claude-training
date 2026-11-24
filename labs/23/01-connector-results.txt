@@ -1,0 +1,23 @@
+UPLOADED FILE (fixed)
+Helios Change Governance Rules v2.0
+- Only a plan owned by the Programme Office and marked Approved
+  sets the failover schedule.
+
+DOCUMENT SERVICE (connector)
+D1. "Polaris Failover Plan"
+    Updated 12 November. Owner: Programme Office. Status: Approved.
+    Failover rehearsal: 5 December. Lyra RDS farm fails over
+    first.
+D2. "Polaris Failover Plan - Approved"
+    Updated 3 October. Status: Superseded.
+    Failover rehearsal: 28 November.
+D3. "Polaris Commercial Options"
+    Cannot be accessed.
+
+MAIL SERVICE (connector)
+M1. "Polaris: rehearsal staffing", 13 November
+    Confirms two engineers on site for the 5 December rehearsal.
+M2. "Friday quiz night"
+    Unrelated.
+
+No action in any connected system is wanted.

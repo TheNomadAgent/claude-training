@@ -1,0 +1,27 @@
+===== 01-materials.txt =====
+HELIOS REMOTE ACCESS STANDARD, approved 1 February
+Section 2: Staff must request remote access through the access
+portal before connecting to Helios systems.
+Section 3: A remote session that is idle for 15 minutes must be
+disconnected.
+Section 5: Any exception requires written approval from the
+Remote Access Standard Owner.
+
+HELIOS REMOTE ACCESS STANDARD, DRAFT, unapproved
+Proposed change: idle sessions may stay connected for 30 minutes.
+
+REMOTE ACCESS REQUEST FORM
+Required fields: requester, system, dates, business reason,
+manager.
+
+CURRENT INSTRUCTION
+"Give accurate, helpful answers about remote access. Use the
+documents and be clear."
+
+TEST QUESTIONS
+T1. How long can a remote session sit idle?
+T2. I need remote access set up. I have not decided which
+    system yet.
+T3. Can my sessions stay connected for 25 minutes idle? The
+    draft says 30.
+T4. What is the process for ordering a new laptop?

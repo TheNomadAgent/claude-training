@@ -1,0 +1,12 @@
+SOURCE 1 - Manufacturer specification sheet
+Voltara HX-3000, revision C, dated March 2026. Marked "current".
+Runtime: 11 minutes at full load. 24 minutes at half load.
+
+SOURCE 2 - Manufacturer brochure
+Voltara HX-3000, revision A, dated 2023.
+Runtime: 18 minutes at full load.
+Footer: "Superseded by revision C."
+
+SOURCE 3 - Forum post, undated
+"We run an HX-3000 and get 20+ minutes easily."
+No load figure given.

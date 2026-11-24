@@ -1,0 +1,15 @@
+===== 01-triage-trial.txt =====
+TICKET TRIAGE TRIAL
+
+Volume: 4,000 tickets a month.
+Requirement: a triage result within 5 seconds.
+
+Option X: $0.004 per ticket. Typical response 1.2 seconds.
+          12% of results needed correcting by an analyst.
+Option Y: $0.011 per ticket. Typical response 3.5 seconds.
+          3% of results needed correcting by an analyst.
+
+Each correction takes an analyst about five minutes, costed at
+$2.50.
+
+These rates come from a trial of 200 tickets.

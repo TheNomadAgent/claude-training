@@ -1,0 +1,26 @@
+===== 01-inventory.txt =====
+HELIOS PATCHING ASSISTANT - SOURCE INVENTORY
+
+F1. Server Patching Standard v4.1, 1 February 2026
+    Status: approved and current. Owner: Platform Standards.
+    Rule: critical security updates within 14 days of release.
+
+F2. Server Patching Standard v3.2, 10 May 2024
+    Status: obsolete. Owner: Platform Standards.
+    Rule: critical security updates within 30 days of release.
+
+F3. Server Patching Standard v4.2 draft, 12 March 2026
+    Status: unsigned draft. Owner: not stated.
+    Rule: critical security updates within 7 days of release.
+
+F4. Patching Standard v4.1 copy.docx, 1 February 2026
+    Status: duplicate of F1.
+
+F5. Patching Standard v4.1 copy.pdf, 1 February 2026
+    Status: duplicate of F1.
+
+F6. Patching discussion notes, 10 March 2026
+    Status: informal notes. Owner: not stated.
+    Content: a 7-day window was suggested for a future revision.
+
+The assistant's job: explain the current approved standard.

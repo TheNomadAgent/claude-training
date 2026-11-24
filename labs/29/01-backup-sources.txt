@@ -1,0 +1,24 @@
+SOURCE A
+Helios Backup Operations Standard, effective 1 April 2026
+Section 4.2: daily backups of production servers must be
+retained for 35 days. This standard replaces earlier retention
+procedures.
+
+SOURCE B
+Helios Backup Procedure, revised 15 June 2024
+Section 3.1: daily backups of production servers are retained
+for 30 days.
+
+SOURCE C
+Backup team note, 8 April 2026
+We have been keeping dailies for 42 days on the new storage
+lately.
+
+THE QUESTION
+How long are daily backups of production servers retained?
+
+ACCEPTANCE CRITERIA
+1. States 35 days.
+2. Names the current standard as the source.
+3. If it mentions 42 days, calls it team practice, not the rule.
+4. Invents no exceptions.

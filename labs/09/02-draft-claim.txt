@@ -1,0 +1,3 @@
+The Voltara HX-3000 provides 18 minutes of runtime at full load
+per the manufacturer, which is enough to cover the Vega
+generator start-up.

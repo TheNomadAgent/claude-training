@@ -1,0 +1,8 @@
+HELIOS BACKUP STANDARD v2.1 (approved)
+Owner: Platform Standards team
+
+1. Production servers are backed up nightly.
+2. Backups are retained for 35 days.
+3. A restore test is performed for each tier-1 system.
+4. Restore test results are recorded in the backup register.
+5. A failed backup is re-run on the next business day.

@@ -1,0 +1,28 @@
+===== 01-site-inputs.txt =====
+STANDING RULES FOR THE WEEKLY PATCH REPORT
+- Use only the site inputs below.
+- Keep every source reference.
+- Do not infer a missing figure.
+- Send a site to human review, and leave it out of the batch,
+  if it reports a security incident, has a measure with no
+  source reference, or has conflicting figures.
+- For routine sites, return one table: site, servers, patched,
+  compliance %, source reference.
+
+SITE INPUTS, week ending 20 November
+Arcturus
+  Servers: 34. Patched: 33. Source: BigFix report ARC-1120.
+  Security incident reported: No.
+
+Lyra
+  Servers: 36. Patched: 32. Source: BigFix report LYR-1120.
+  Security incident reported: Yes. Unpatched host LYRRDS18
+  showed repeated failed admin logons.
+
+Vega
+  Servers: 27. Patched: 25. Source: not supplied.
+  Security incident reported: No.
+
+Castor
+  Servers: 21. Patched: 21. Source: BigFix report CAS-1120.
+  Security incident reported: No.

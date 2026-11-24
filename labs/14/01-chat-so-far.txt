@@ -1,0 +1,17 @@
+ARCFS01 MIGRATION - WHAT THE CHAT COVERED (in the order it came up)
+
+- Goal: move file shares from ARCFS01 to ARCFS02 with no change
+  to share paths for users.
+- Talked about DFS Replication to seed the data. Dropped it:
+  too slow to set up for this timeline.
+- Decision: use Robocopy with security and timestamps copied.
+- Talked about doing it mid-week. Dropped it.
+- Decision: cutover on the weekend of 28 and 29 November.
+- Constraint: no changes at all from 21 to 24 November. Launch
+  window.
+- Constraint: shares must stay readable during the pre-copy.
+- Long tangent about printer drivers. Not relevant.
+- Open: some folders have permissions for kepler.local accounts
+  that no longer resolve. Not decided what to do with them.
+- Open: who signs off the cutover on the day. Not decided.
+- First draft of the comms was written and rejected as too long.

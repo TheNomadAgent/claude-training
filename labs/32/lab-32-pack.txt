@@ -1,0 +1,18 @@
+===== 01-wrong-answer-habits.txt =====
+TEN HABITS OF WRONG ANSWERS
+
+1. Use the most capable model.
+2. Remove the review to save time.
+3. Tell Claude more firmly, or repeat the instruction.
+4. Rewrite the whole prompt or start again.
+5. Estimate it, assume it or fill the gap.
+6. The newest file, or the first result, wins.
+7. It is fine because someone senior said so.
+8. Ask Claude whether its answer is right.
+9. Report an outage.
+10. Add a disclaimer.
+
+SEVEN DOMAINS
+Prompting. Output evaluation. Product and model selection.
+Workflow integration. Configuration and knowledge.
+Governance. Troubleshooting.

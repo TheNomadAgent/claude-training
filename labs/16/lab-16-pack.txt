@@ -1,0 +1,20 @@
+===== 01-vega-backup-options.txt =====
+VEGA BACKUP - REQUIREMENTS AND OPTIONS
+
+Helios requirements
+R1. Retention of at least 35 days.
+R2. Restore of 2 TB within 4 hours.
+R3. An offsite copy.
+
+Option A
+Monthly cost: $1,900. Retention: 35 days. Offsite copy: yes.
+Restore of 2 TB: 6 hours (measured in our lab).
+
+Option B
+Monthly cost: $2,400. Retention: 35 days. Offsite copy: yes.
+Restore of 2 TB: 3 hours (measured in our lab).
+
+Option C
+Monthly cost: $1,500. Retention: 14 days. Offsite copy: yes.
+Restore of 2 TB: not tested. The vendor's website says
+"industry-leading restore speeds".

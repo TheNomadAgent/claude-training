@@ -1,0 +1,15 @@
+INCIDENT RECORD - LYRA RDS CONNECTION BROKER
+
+Date: Friday 9 October.
+Start: 02:14. Service restored: 02:57. Duration: 43 minutes.
+What failed: the RD Connection Broker service on LYRRDB01 stopped.
+Effect: mission operators could not start new sessions. Existing
+sessions kept working.
+Fix: the service was restarted by the on-call engineer.
+Cause: under investigation. A scheduled certificate task ran on
+LYRRDB01 at 02:10. A link to the outage is NOT confirmed.
+There is a single connection broker. No standby.
+Next: root cause review due 23 October.
+Internal ref: INC0047730. Engineer: P. Nikora.
+Customer communications must be approved by the service delivery
+manager before they are sent.

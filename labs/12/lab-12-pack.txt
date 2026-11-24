@@ -1,0 +1,13 @@
+===== 01-workloads.txt =====
+THREE HELIOS WORKLOADS
+
+W1. Sort about 4,000 monitoring alert emails a day into five
+    fixed categories. Each alert is two or three lines. Speed
+    matters.
+
+W2. Draft the weekly planned maintenance notice from approved
+    facts and a style guide. One a week. A person reviews it.
+
+W3. Reconcile conflicting support clauses across three long
+    contracts inherited from the Kepler Dynamics acquisition,
+    and explain the implications for the service owner.

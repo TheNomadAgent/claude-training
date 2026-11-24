@@ -1,0 +1,16 @@
+CURRENT INSTRUCTIONS (written in January)
+"Summarise build requests. Standard build is 2 vCPU and 8 GB.
+Premium build is 4 vCPU and 16 GB. Requests are valid for 30
+days. Team leads approve up to 8 vCPU. Platform manager
+approval for 9 to 16 vCPU."
+
+CURRENT AUTHORITATIVE SOURCES, effective 1 July
+Server Build Catalogue v2.1 (owner: Platform Engineering)
+  General Purpose build: 4 vCPU and 16 GB.
+  Database build: 8 vCPU and 64 GB.
+Build Request Guide v4 (owner: Platform policy owner)
+  An approved build request stays valid for 14 days.
+Build Approval Policy v3 (owner: Platform policy owner)
+  Every non-catalogue build requires Architecture Review.
+  Any build above 16 vCPU also requires Capacity approval
+  before it is scheduled.

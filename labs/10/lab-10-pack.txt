@@ -1,0 +1,53 @@
+===== 01-incident-record.txt =====
+INCIDENT RECORD - LYRA RDS CONNECTION BROKER
+
+Date: Friday 9 October.
+Start: 02:14. Service restored: 02:57. Duration: 43 minutes.
+What failed: the RD Connection Broker service on LYRRDB01 stopped.
+Effect: mission operators could not start new sessions. Existing
+sessions kept working.
+Fix: the service was restarted by the on-call engineer.
+Cause: under investigation. A scheduled certificate task ran on
+LYRRDB01 at 02:10. A link to the outage is NOT confirmed.
+There is a single connection broker. No standby.
+Next: root cause review due 23 October.
+Internal ref: INC0047730. Engineer: P. Nikora.
+Customer communications must be approved by the service delivery
+manager before they are sent.
+
+===== 00-helios-profile.txt =====
+HELIOS ORBITAL LTD - CUSTOMER PROFILE (fictional, for training)
+
+What they do
+Helios Orbital operates a small fleet of earth-observation
+satellites and sells the imagery. Mission operators work shifts
+around launch and pass windows, so "after hours" is often their
+busiest time.
+
+Sites and server name prefixes
+ARC  Arcturus    primary data centre
+LYR  Lyra        mission operations, including the RDS farm
+VEG  Vega        ground station
+CAS  Castor      head office
+POL  Polaris     disaster recovery
+OLD  legacy      servers inherited from Kepler Dynamics (acquired)
+
+Domains
+helios.corp      main domain
+kepler.local     legacy domain from the acquisition
+
+Server names
+Site prefix, role, number. LYRRDS07 is RDS session host 07 at
+Lyra. ARCSQL01 is SQL Server 01 at Arcturus.
+
+People and roles (roles only, no names)
+Service owner            Helios's operations manager. Not technical.
+Mission operators        Shift staff who use the Lyra RDS farm.
+Helios IT lead           Technical contact.
+Service delivery manager Our side. Owns the customer relationship.
+
+Standing rules for anything sent to Helios
+- Say "planned maintenance", "service desk" and "maintenance window".
+- Never give internal ticket numbers or engineer names.
+- Never promise a completion time that has not been scheduled.
+- Times are New Zealand time.

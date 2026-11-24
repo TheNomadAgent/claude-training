@@ -1,0 +1,17 @@
+POLARIS DR TEST RECORD - SATURDAY 17 OCTOBER
+
+System                         Target    Achieved
+Lyra RDS farm                  2h 00m    1h 35m
+ARCSQL01 imagery catalogue     4h 00m    5h 10m
+ARCFS01 file services          8h 00m    6h 20m
+VEGTLM01 telemetry ingest      1h 00m    0h 50m
+
+All four systems were recovered.
+The imagery catalogue missed its target by 1h 10m. Restore
+throughput was lower than expected. Cause not yet determined.
+
+Actions
+A1. Review restore throughput for the catalogue.
+    Owner: backup lead. Due: 6 November.
+A2. Retest the catalogue restore.
+    Owner: DR coordinator. Due: 20 November.

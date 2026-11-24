@@ -1,0 +1,19 @@
+===== 01-draft-business-case.txt =====
+MONITORING LICENCE - DRAFT BUSINESS CASE
+
+Helios has 164 servers to monitor.
+
+Option A: $4,500 a month. Covers up to 200 servers.
+Option B: $3,600 a month. Covers up to 120 servers, then $30 a
+month for each additional server.
+
+In this paper "availability" means uptime during business hours,
+08:00 to 18:00 on weekdays.
+
+Option A offers 99.5% availability. Option B offers 99.2%
+availability measured around the clock.
+
+Recommendation: Option B is the lowest-cost choice at $3,600 a
+month and is recommended. The saving funds the Vega upgrade.
+
+Next step: notify the team by end of week.

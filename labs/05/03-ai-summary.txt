@@ -1,0 +1,12 @@
+DR TEST SUMMARY
+
+The Polaris disaster recovery test on Saturday 17 October was
+successful. All four systems were recovered.
+
+The Lyra RDS farm was recovered in 1h 35m against a 2h target.
+File services on ARCFS01 were recovered in 6h 20m against an 8h
+target. Telemetry ingest on VEGTLM01 was recovered in 50 minutes
+against a 1h target. The imagery catalogue on ARCSQL01 was
+restored in just over five hours.
+
+No further action is required.

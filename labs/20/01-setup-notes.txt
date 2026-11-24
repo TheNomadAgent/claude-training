@@ -1,0 +1,15 @@
+HELIOS NOTICES PROJECT - SETUP NOTES (unsorted)
+
+N1.  Say "planned maintenance", never "outage".
+N2.  The Lyra RDS window is Saturday 14 November, 22:00 to 02:00.
+N3.  Helios Customer Communications Style Guide v3 (document).
+N4.  Address customer staff directly. Short paragraphs.
+N5.  LYRRDS07, 12, 18 and 21 were deferred this week.
+N6.  Helios Service Catalogue, current version (document).
+N7.  Never promise a completion time that is not scheduled.
+N8.  List anything missing under "Not supplied".
+N9.  This week's notice must go out by 3 pm Friday.
+N10. Do not approve changes or estimate impact.
+N11. Last month's ARCSQL01 change plan (document).
+N12. Notices are reviewed by the service delivery manager before
+     they are sent.

@@ -1,0 +1,17 @@
+HELIOS CHANGE REVIEW
+
+How it works today
+An engineer fills in a change request form. The change advisory
+board (CAB) meets on Tuesdays and approves or rejects each
+change. Only the CAB can approve. A missed rollback plan is the
+most common reason for rejection.
+
+Five ideas for using Claude
+I1. Draft a plain-language summary of each change request for
+    the CAB pack, from the form.
+I2. Check each form for missing fields, such as no rollback
+    plan, before it goes to the CAB.
+I3. Approve low-risk changes automatically.
+I4. Decide the risk rating of each change.
+I5. Turn the CAB's recorded decisions into the weekly email to
+    Helios, for the service delivery manager to review.

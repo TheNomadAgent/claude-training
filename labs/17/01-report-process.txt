@@ -1,0 +1,21 @@
+WEEKLY HELIOS SERVICE REPORT - TIMINGS (average of 6 weeks)
+
+Step                                    Minutes
+1. Collect updates from four sites      90
+2. Reformat updates into the template   60
+3. Write the narrative                  45
+4. Service delivery manager review      20
+5. Fix what the review finds            40
+Total                                   255
+
+Review usually finds wrong totals and missing site figures.
+
+Ideas
+P1. Give the sites a standard input template.
+    Effort: 1 day. Expected saving: about 50 minutes a week
+    from step 2.
+P2. Have Claude draft the narrative from the completed table.
+    Effort: 2 days. Expected saving: about 30 minutes a week
+    from step 3.
+P3. Skip the service delivery manager review.
+    Effort: none. Expected saving: 20 minutes a week.

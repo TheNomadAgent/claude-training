@@ -1,0 +1,21 @@
+===== 01-backup-standard.txt =====
+HELIOS BACKUP STANDARD v2.1 (approved)
+Owner: Platform Standards team
+
+1. Production servers are backed up nightly.
+2. Backups are retained for 35 days.
+3. A restore test is performed for each tier-1 system.
+4. Restore test results are recorded in the backup register.
+5. A failed backup is re-run on the next business day.
+
+===== 02-ai-summary.txt =====
+BACKUP STANDARD - SUMMARY
+
+S1. Production servers are backed up every night.
+S2. Backups are kept for 35 days.
+S3. Tier-1 systems are restore tested every 90 days.
+S4. This is required by section 7.3 of the standard.
+S5. Results go in the backup register, so an auditor could
+    review them.
+S6. A failed backup is re-run within four hours.
+S7. The standard is owned by Mere Aroha in Platform Standards.

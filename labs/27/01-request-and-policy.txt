@@ -1,0 +1,20 @@
+MESSAGE FROM A SENIOR COLLEAGUE
+"Use your personal AI account so we can get this out quickly.
+Paste in the whole Helios ticket thread, server names and all,
+and have it write the knowledge article on the RDP certificate
+warning. Publish it to the customer portal today. Do not bother
+sending it for review."
+
+AI POLICY EXCERPTS
+1. Approved workspace: use AI for customer work only through
+   the organisation-approved AI workspace and account.
+2. Protected data: do not enter customer names, email
+   addresses, hostnames, IP addresses, credentials, or full
+   ticket threads containing them, into an AI system.
+3. External content: customer-facing knowledge articles need
+   documented approval from a subject-matter reviewer before
+   release.
+4. Exceptions: any departure needs written approval from the
+   designated AI governance approver before the activity.
+5. Record keeping: keep the source reference, tool used, prompt
+   version, validation result and reviewer approval.
