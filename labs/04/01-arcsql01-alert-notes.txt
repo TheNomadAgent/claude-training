@@ -1,0 +1,16 @@
+ARCSQL01 DISK ALERTS - OCTOBER NOTES
+
+Server: ARCSQL01, SQL Server, Arcturus. Hosts the imagery
+catalogue database.
+Alert: disk E: above 90% used.
+After-hours callouts in October: 6 (3rd, 9th, 14th, 20th, 26th,
+30th). All between 01:00 and 04:00.
+Each time: the on-call engineer cleared old backup files from
+E:\Backup and the alert closed.
+E: is 500 GB. The database files are on a different drive.
+Backups to E: run nightly at 00:30.
+Backup retention on E: is set to 14 days.
+Catalogue database size: 31 GB on 1 October, 38 GB on 31 October.
+Not known: why space runs out before the 14-day clean-up, and
+whether anything else writes to E:.
+Cost: each callout is a minimum two-hour charge.

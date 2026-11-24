@@ -1,0 +1,35 @@
+HELIOS ORBITAL LTD - CUSTOMER PROFILE (fictional, for training)
+
+What they do
+Helios Orbital operates a small fleet of earth-observation
+satellites and sells the imagery. Mission operators work shifts
+around launch and pass windows, so "after hours" is often their
+busiest time.
+
+Sites and server name prefixes
+ARC  Arcturus    primary data centre
+LYR  Lyra        mission operations, including the RDS farm
+VEG  Vega        ground station
+CAS  Castor      head office
+POL  Polaris     disaster recovery
+OLD  legacy      servers inherited from Kepler Dynamics (acquired)
+
+Domains
+helios.corp      main domain
+kepler.local     legacy domain from the acquisition
+
+Server names
+Site prefix, role, number. LYRRDS07 is RDS session host 07 at
+Lyra. ARCSQL01 is SQL Server 01 at Arcturus.
+
+People and roles (roles only, no names)
+Service owner            Helios's operations manager. Not technical.
+Mission operators        Shift staff who use the Lyra RDS farm.
+Helios IT lead           Technical contact.
+Service delivery manager Our side. Owns the customer relationship.
+
+Standing rules for anything sent to Helios
+- Say "planned maintenance", "service desk" and "maintenance window".
+- Never give internal ticket numbers or engineer names.
+- Never promise a completion time that has not been scheduled.
+- Times are New Zealand time.

@@ -1,0 +1,9 @@
+LYRA (LYR) - OCTOBER SERVICE NOTES
+
+Servers in scope: 36
+Availability: 99.82%
+Incidents: 4 (P1: 1, P2: 0, P3: 3)
+Changes: 9 implemented, 1 failed and rolled back
+Patch compliance at month end: 36 of 36
+Notes: the P1 was a 43-minute loss of the RDS connection broker
+on 9 October during a pass window.

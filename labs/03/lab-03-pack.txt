@@ -1,0 +1,23 @@
+===== 01-change-brief.txt =====
+CHANGE BRIEF - RD GATEWAY SIGN-IN FOR MISSION OPERATORS
+
+What is changing: from Tuesday 1 December, signing in to the Lyra
+RDS farm through the RD Gateway will need multi-factor
+authentication (MFA).
+Who is affected: members of GRP-Mission-Operators. About 60 people.
+What they need to do: register for MFA before 1 December using
+the self-service portal. Registration takes about five minutes.
+What happens if they do not: they will not be able to sign in
+from 1 December until they register.
+Help: the service desk can assist with registration.
+Not decided yet: whether there will be a grace period. Do not
+mention one.
+Approved terms: "RD Gateway", "service desk", "MFA".
+Not approved: "VPN", "helpdesk", "two-step".
+
+ACCEPTANCE CRITERIA FOR THE NOTICE
+1. 100 words or fewer.
+2. Uses the approved terms and none of the unapproved ones.
+3. States the date, who is affected and the one action needed.
+4. Contains nothing that is not in this brief. No phone numbers,
+   no links, no grace period.

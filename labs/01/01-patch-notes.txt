@@ -1,0 +1,17 @@
+LYRA RDS PATCHING - ENGINEER NOTES (internal)
+
+Window: Saturday 14 November, 22:00 to 02:00.
+Scope: 23 RDS session hosts, LYRRDS01 to LYRRDS23.
+Result: 19 patched and rebooted. 4 deferred.
+Deferred: LYRRDS07, LYRRDS12, LYRRDS18, LYRRDS21.
+Why deferred: mission operators still had active sessions on those
+four hosts at 01:30. A launch window was in progress. We did not
+force logoffs.
+New window for the four: Wednesday 18 November, 01:00 to 03:00.
+Booked and agreed with the Helios IT lead.
+Impact so far: none reported. The 19 patched hosts are in service.
+Until the 18th the four deferred hosts stay on last month's
+patch level.
+Internal ref: INC0048812. Engineer: R. Tane.
+Not known yet: whether the launch schedule will clash again on
+the 18th. Helios mission planning has been asked.

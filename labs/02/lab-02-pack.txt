@@ -1,0 +1,32 @@
+===== 01-arcturus-october.txt =====
+ARCTURUS (ARC) - OCTOBER SERVICE NOTES
+
+Servers in scope: 34
+Availability: 99.96%
+Incidents: 7 (P1: 0, P2: 2, P3: 5)
+Changes: 12 implemented, 0 failed
+Patch compliance at month end: 31 of 34
+Notes: both P2s were the same fault. Disk E: on ARCSQL01 filled
+twice. Root cause not confirmed.
+
+===== 02-lyra-october.txt =====
+LYRA (LYR) - OCTOBER SERVICE NOTES
+
+Servers in scope: 36
+Availability: 99.82%
+Incidents: 4 (P1: 1, P2: 0, P3: 3)
+Changes: 9 implemented, 1 failed and rolled back
+Patch compliance at month end: 36 of 36
+Notes: the P1 was a 43-minute loss of the RDS connection broker
+on 9 October during a pass window.
+
+===== 03-vega-october.txt =====
+VEGA (VEG) - OCTOBER SERVICE NOTES
+
+Servers in scope: 27
+Availability: 99.99%
+Incidents: export not supplied. The ground station team's ticket
+queue was being migrated and the October export is still to come.
+Changes: 5 implemented, 0 failed
+Patch compliance at month end: 25 of 27
+Notes: none.

@@ -1,0 +1,9 @@
+ARCTURUS (ARC) - OCTOBER SERVICE NOTES
+
+Servers in scope: 34
+Availability: 99.96%
+Incidents: 7 (P1: 0, P2: 2, P3: 5)
+Changes: 12 implemented, 0 failed
+Patch compliance at month end: 31 of 34
+Notes: both P2s were the same fault. Disk E: on ARCSQL01 filled
+twice. Root cause not confirmed.

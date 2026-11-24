@@ -12,6 +12,7 @@ sys.path.insert(0, HERE)
 from content.sections import DOMAINS, SECTIONS
 from content.glossary import GLOSSARY
 from content.exam_multi import M as MULTI
+from content.labs import LABS, grader
 
 BASE = "https://thenomadagent.github.io/claude-training/"
 QR_JS = os.environ.get("QR_NODE_PATH", "/home/claude/work/node_modules")
@@ -199,7 +200,34 @@ def main():
             "deck": deck_path,
             "quiz": [{"q": q["q"], "multi": bool(q.get("multi")), "o": [{"t": o[0], "ok": bool(o[1]), "why": o[2]} for o in q["options"]]} for q in s["quiz"]],
         }
-        slides = "\n".join(slide_html(sl, s, logo_big) for sl in s["deck"])
+        if n in LABS:
+            lb = LABS[n]
+            ldir = os.path.join(ROOT, "labs", "%02d" % n)
+            os.makedirs(ldir, exist_ok=True)
+            pack = []
+            for name, cap, text in lb["pack"]:
+                open(os.path.join(ldir, name), "w", encoding="utf-8", newline="\r\n").write(text + "\n")
+                pack.append({"name": name, "cap": inline(cap), "text": text, "url": "labs/%02d/%s" % (n, name)})
+            allname = "lab-%02d-pack.txt" % n
+            open(os.path.join(ldir, allname), "w", encoding="utf-8", newline="\r\n").write(
+                "\n\n".join("===== %s =====\n%s" % (nm, tx) for nm, _c, tx in lb["pack"]) + "\n")
+            data["content"][n]["lab"] = {
+                "title": lb["title"], "kind": lb["kind"], "minutes": lb["minutes"],
+                "scenario": body_html(lb["scenario"]), "pack": pack, "zip": "labs/%02d/%s" % (n, allname),
+                "start": {"cap": lb["start"][0], "text": lb["start"][1]} if lb.get("start") else None,
+                "tasks": [[inline(a), inline(b)] for a, b in lb["tasks"]],
+                "checks": [inline(c) for c in lb["checks"]],
+                "grader": grader(lb),
+                "reveal": {"cap": lb["reveal"][0], "text": lb["reveal"][1]},
+                "debrief": [inline(d) for d in lb["debrief"]],
+            }
+        deck = list(s["deck"])
+        if n in LABS:
+            lb = LABS[n]
+            deck.insert(len(deck) - 1, {"t": "steps", "h": "Lab: " + lb["title"].lower(),
+                                        "steps": [re.sub(r"[*`]", "", t) for t, _ in lb["tasks"]],
+                                        "notes": "Ten minutes, hands on. Everyone opens the handout, session %d, Start the lab. Debrief after: %s" % (n, " ".join(lb["debrief"]))})
+        slides = "\n".join(slide_html(sl, s, logo_big) for sl in deck)
         page = deck_tpl.replace("%%SLIDES%%", slides).replace("%%TITLE%%", esc(s["short"]))
         page = page.replace("%%LOGO%%", logo_small).replace("%%ICON32%%", icon32)
         for k, v in fonts.items():

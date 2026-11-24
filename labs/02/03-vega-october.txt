@@ -1,0 +1,9 @@
+VEGA (VEG) - OCTOBER SERVICE NOTES
+
+Servers in scope: 27
+Availability: 99.99%
+Incidents: export not supplied. The ground station team's ticket
+queue was being migrated and the October export is still to come.
+Changes: 5 implemented, 0 failed
+Patch compliance at month end: 25 of 27
+Notes: none.
